@@ -36,8 +36,34 @@
           <img src="{% static 'theme/images/kashta.jpg' %}" style="display:inline-block; text-align: center; max-width: 200px; left: 50%;">
           <div class="divider"></div>
           <ul class="nav in" id="side-menu">
+            <li>
+                <a href="{% url 'P001:home'%}">
+                  <i class="fa fa-far fa-sun"></i>&nbsp;
+                  {% trans 'home' %}
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'P001:kashta-home'%}">
+                  <i class="fa fa-far fa-sun"></i>&nbsp;
+                  {% trans 'kashta' %}
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'P001:bladalnoor-home'%}">
+                  <i class="fa fa-far fa-sun"></i>&nbsp;
+                  {% trans 'Blad Alnoor' %}
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'P001:batinjan-home'%}">
+                  <i class="fa fa-far fa-sun"></i>&nbsp;
+                  {% trans 'Batinjan' %}
+                </a>
+            </li>
           </ul>
       </div>
   </div>
+
+
 
 </nav>

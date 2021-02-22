@@ -1,0 +1,22 @@
+{% extends "base/header/system_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load general_tags %}
+{% block page_title %}{% trans 'P001' %}{% endblock %}
+{% block content %}
+
+    <div class="col-lg-12">
+
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <img src="{% static 'theme/images/kashta.jpg' %}" alt="">
+        </div>
+        <div class="col-lg-4"></div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12" style="background-color: #057e8f; color: #fff; align-content: right; padding: 20px;">
+            <p>كاشتا لاب، شركة سودانية تعمل بصورة أساسية في تقديم خدمات وحلول تقنية المعلومات، تمتلك الشركة أسماء أعمال تعمل في مجالات أخرى ) بلاد النور، باتنجان ).</p>
+        </div>
+
+    </div>
+
+{% endblock %}

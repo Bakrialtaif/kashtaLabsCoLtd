@@ -1,0 +1,22 @@
+{% extends "base/header/system_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load general_tags %}
+{% block page_title %}{% trans 'P001' %}{% endblock %}
+{% block content %}
+
+    <div class="col-lg-12">
+
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <img src="{% static 'theme/images/batinjan.jpg' %}" alt="">
+        </div>
+        <div class="col-lg-4"></div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12" style="background-color: #461d3f; color: #fff; align-content: right; padding: 20px;">
+            <p>باتنجان، إسم عمل مملوك لشركة كاشتا، وهي أول مؤسسة أعمال سودانية ربحية متخصصة في تطوير التغذية المدرسية. تسعى المؤسسة لتحسين المستوى الغذائي والصحي بالمدارس وفق رؤية تشغيلية متكاملة ومتخصصة وخبرة علمية وعملية للمساهمة في تطوير قطاع التعليم في السودان.</p>
+        </div>
+
+    </div>
+
+{% endblock %}

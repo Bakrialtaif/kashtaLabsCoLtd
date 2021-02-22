@@ -4,161 +4,81 @@
 {% load general_tags %}
 {% block page_title %}{% trans 'P001' %}{% endblock %}
 {% block crumbs %}
-    <li class="breadcrumb-back">{% trans 'P001' %}</li>
-    <li class="breadcrumb-back">{{ user.get_full_name }}</li>
+<li class="breadcrumb-back">{% trans 'P001' %}</li>
+<li class="breadcrumb-back">{{ user.get_full_name }}</li>
 {% endblock %}
 {% block content %}
-<section class="P001">
 
-    <div class="row">
+    <div class="col-lg-12">
+        <h1 style="color: #007c74;">منظومة متكاملة</h1>
 
-        <div class="col-lg-8 col-md-12 col-sm-12">
+        <p>تسعى كاشتا لاب لبناء منظومة عمل متكاملة من خلال ثلاثة مكونات ( كاشتا لاب، بلاد النور، باتنجان )، لتحقيق مجموعة أهداف، منها :</p>
+
+        <ol>
+            <li>تعزيز وتكامل الخدمات المقدمة.</li>
+            <li>تحقيق إستقرار مالي عالي.</li>
+            <li>توفير مرونة واسعة للإستجابة للمتغيرات والطوارئ.</li>
+            <li>تعزيز أدوار الشركة في خدمة المجتمع.</li>
+        </ol>
+
+        <p>بجانب الأهداف أعلاه، تسعى كاشتا من خلال مكوناتها الثلاث إلى تحقيق مجموعة أغراض منها:</p>
+        
+        <ol>
+            <li>تنويع الخدمات والمنتجات بين المتقدمة والتقليدية.</li>
+            <li>تنويع مصادر الإيراد وتحقيق الأرباح من مصادر مختلفة.</li>
+            <li>مشاركة وتبادل التمويل وحفظ القيمة بين مكونات الشركة الثلاث.</li>
+            <li>مشاركة الموارد البشرية والتقنية والأصول بين مكونات الشركة وتحقيق أقصى إستفادة منها لخدمة أهداف الشركة وتقليل الفاقد للحد الأدنى الممكن.</li>
+            <li>إمكانية فتح أسواق جديدة بإستمرار للإستجابة لأي ظروف طارئة.</li>
+        </ol>
+    </div>
+
+    <div class="col-lg-12">
+            <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="row">
-            
-                <div class="col-lg-3 col-md-12 col-sm-12">
-                    <img src="{{ user.profile.documents.first.file.url }}" class="img-responsive img-thumbnail" style="">
-                </div>
-
-                <div class="col-lg-9 col-md-12 col-sm-12">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h3>{{ user.get_full_name }}</h3>
-                        </div>
-                        <div class="col-lg-12">
-                            <span class="hint">
-                                {% for classify in request.user.classifies.all %}
-                                    [&nbsp;{{ classify.classification }}&nbsp;]&nbsp;
-                                {% endfor %}
-                                {% for StudentClassifies in request.user.profile.get_student_academic_year_classifies %}
-                                    [&nbsp;{{ StudentClassifies }}&nbsp;]&nbsp;
-                                {% endfor %}
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="divider"></div>
-
-                 </div>
+                <div class="col-lg-12"><img src="{% static 'theme/images/kashta.jpg' %}" alt=""></div>
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-12 col-sm-12" style="align-items: left;">    
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="row">
+                <div class="col-lg-12"><img src="{% static 'theme/images/bladalnoor.png' %}" alt=""></div>
+           </div>
+        </div>
 
-            <blockquote class="quote-box">
-                <p class="quotation-mark">&nbsp;</p>
-                <p class="quote-text">{{ quote.statement}}</p>
-                {% if quote.author %}<p class="quote-author">-&nbsp;{{ quote.author}}&nbsp;-</p>{% else %}<p>&nbsp;</p>{% endif %}
-            </blockquote>
-
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="row">
+                <div class="col-lg-12"><img src="{% static 'theme/images/batinjan.jpg' %}" alt=""></div>
+            </div>
         </div>
     </div>
 
-    <div class="divider"></div>
-
-    {% comment %} {% dashboard_projects_wedget_tag %} {% endcomment %}
-
-    <div class="divider"></div>
-    
-    {% comment %} {% dashboard_customers_wedget_tag %} {% endcomment %}
-
-    {% if request.user.vacancies.basic_vacancy %}
-    
-        <div class="divider"></div>                        
-
-        <div class="row regulations">        
-            <div class="col-lg-6 col-md-6">
-                <div class="panel">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <i class="fa fa-tasks fa-5x"></i>
-                            </div>
-                            <div class="col-xs-8 text-right">
-                                <div class="huge">1</div>
-                                <div>{% trans 'vision and mission'%}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="{% url 'P002:organization-vision-mission' %}" data-toggle='modal' data-target='#modal'>
-                        <div class="panel-footer">
-                            <span class="pull-right">{% trans 'vision and mission' %}</span>
-                            <span class="pull-left"><i class="fa fa-arrow-circle-left"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="panel">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <i class="fa fa-tasks fa-5x"></i>
-                            </div>
-                            <div class="col-xs-8 text-right">
-                                <div class="huge">2</div>
-                                <div>{% trans 'hr regulations' %}</div>
-                            </div>
-                        </div>
-                    </div>
-                    {% for sheet in P004_sheets%}
-                        <a href="{% url 'Core:sheet-details' sheet_id=sheet.pk %}" data-toggle='modal' data-target='#modal'>
-                            <div class="panel-footer">
-                                <span class="pull-right">{% trans sheet.code %}</span>
-                                <span class="pull-left"><i class="fa fa-arrow-circle-left"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="panel">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <i class="fa fa-tasks fa-5x"></i>
-                            </div>
-                            <div class="col-xs-8 text-right">
-                                <div class="huge">3</div>
-                                <div>{% trans 'it regulations' %}</div>
-                            </div>
-                        </div>
-                    </div>
-                    {% for sheet in P002_sheets%}
-                        <a href="{% url 'Core:sheet-details' sheet_id=sheet.pk %}" data-toggle='modal' data-target='#modal'>
-                            <div class="panel-footer">
-                                <span class="pull-right">{% trans sheet.code %}</span>
-                                <span class="pull-left"><i class="fa fa-arrow-circle-left"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="panel">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <i class="fa fa-tasks fa-5x"></i>
-                            </div>
-                            <div class="col-xs-8 text-right">
-                                <div class="huge">4</div>
-                                <div>{% trans 'requests regulation' %}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="{% url 'P001:requests-regulation' %}">
-                        <div class="panel-footer">
-                            <span class="pull-right">{% trans 'requests regulation' %}</span>
-                            <span class="pull-left"><i class="fa fa-arrow-circle-left"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
+    <div class="col-lg-12">    
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="row">
+                <div class="col-lg-12" style="background-color: #057e8f; color: #fff; align-content: right; padding: 20px;">
+                    <p>كاشتا لاب، شركة سودانية تعمل بصورة أساسية في تقديم خدمات وحلول تقنية المعلومات، تمتلك الشركة أسماء أعمال تعمل في مجالات أخرى ) بلاد النور، باتنجان ).</p>
                 </div>
             </div>
         </div>
-    {% endif %}
-</section>
+
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="row">
+                <div class="col-lg-12" style="background-color: #00a8d8; color: #fff; align-content: right; padding: 20px;">
+                    <p>بلاد النور، إسم عمل مملوك لشركة كاشتا، وهي مؤسسة أعمال تعمل في مجال مبيعات مواد التغليف للمطاعم والمستشفيات والفنادق، تسعى بلاد النور مستقبلاً للتوسع في مجالات الصناعة والزراعة والإستيراد والتصدير.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="row">
+                <div class="col-lg-12" style="background-color:#461d3f; color: #fff; align-content: right; padding: 20px;">
+                    <p>باتنجان، إسم عمل مملوك لشركة كاشتا، وهي أول مؤسسة أعمال سودانية ربحية متخصصة في تطوير التغذية المدرسية. تسعى المؤسسة لتحسين المستوى الغذائي والصحي بالمدارس وفق رؤية تشغيلية متكاملة ومتخصصة وخبرة علمية وعملية للمساهمة في تطوير قطاع التعليم في السودان.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>								
+
 {% endblock %}
