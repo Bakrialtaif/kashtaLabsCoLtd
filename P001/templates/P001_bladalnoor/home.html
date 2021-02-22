@@ -5,18 +5,62 @@
 {% block page_title %}{% trans 'P001' %}{% endblock %}
 {% block content %}
 
-    <div class="col-lg-12">
+    <div class="row">
+        <div class="col-lg-12">
 
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4">
-            <img src="{% static 'theme/images/bladalnoor.png' %}" alt="">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <img src="{% static 'theme/images/bladalnoor.png' %}" alt="">
+            </div>
+            <div class="col-lg-4"></div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12" style="background-color: #00a8d8; color: #fff; align-content: right; padding: 20px;">
+                <p>بلاد النور، إسم عمل مملوك لشركة كاشتا، وهي مؤسسة أعمال تعمل في مجال مبيعات مواد التغليف للمطاعم والمستشفيات والفنادق، تسعى بلاد النور مستقبلاً للتوسع في مجالات الصناعة والزراعة والإستيراد والتصدير.</p>
+            </div>
+
         </div>
-        <div class="col-lg-4"></div>
+    </div>
+    <div class="divider"></div>
 
-        <div class="col-lg-12 col-md-12 col-sm-12" style="background-color: #00a8d8; color: #fff; align-content: right; padding: 20px;">
-            <p>بلاد النور، إسم عمل مملوك لشركة كاشتا، وهي مؤسسة أعمال تعمل في مجال مبيعات مواد التغليف للمطاعم والمستشفيات والفنادق، تسعى بلاد النور مستقبلاً للتوسع في مجالات الصناعة والزراعة والإستيراد والتصدير.</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">{% trans 'work fields' %}</a></li>
+        <li><a href="#aims" data-toggle="tab">{% trans 'aims' %}</a></li>
+        <li><a href="#messages" data-toggle="tab">{% trans 'fixed assets' %}</a></li>
+        <li><a href="#liabilities" data-toggle="tab">{% trans 'liabilities' %}</a></li>
+        <li><a href="#next" data-toggle="tab">{% trans 'next step' %}</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="home">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                est laborum.
+            </p>
         </div>
-
+        <div class="tab-pane fade" id="aims">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                est laborum.
+            </p>
+        </div>
+        <div class="tab-pane fade" id="messages">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                est laborum.
+            </p>
+        </div>
+        <div class="tab-pane fade" id="liabilities">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                est laborum.
+            </p>
+        </div>
+        <div class="tab-pane fade" id="next">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                est laborum.
+            </p>
+        </div>
     </div>
 
 {% endblock %}
