@@ -1,0 +1,104 @@
+{% load static %}
+{% load i18n %}
+
+{% load presentation_tags %}
+
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+  <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">{{ request.organization }}</a>
+  </div>
+
+  <ul class="nav navbar-top-links navbar-right">
+      <li class="dropdown">
+        <a href="{% url 'P000:home' %}">
+          {% trans 'back'%}
+          <i class="fa fa-far fa-arrow-alt-circle-left" aria-hidden="true"></i>
+        </a>
+      </li>
+  </ul>
+
+  <div class="navbar-default sidebar" role="navigation">
+      <div class="sidebar-nav navbar-collapse collapse" style="height: 1px;">
+          <img src="{{ request.orgLogo }}" style="display:inline-block; text-align: center; max-width: 200px; left: 50%;">
+          <div class="divider"></div>
+          <ul class="nav in" id="side-menu">
+            
+            <li>
+              <a href="{% url 'Presentation:home' %}">
+              <i class="fa fa-fas fa-border-all" aria-hidden="true"></i>&nbsp;{% trans 'introduction' %}
+              </a>
+            </li>
+
+            <li>
+              <a href="{% url 'Presentation:rgei-model' %}">
+                <i class="fa fa-fas fa-border-all" aria-hidden="true"></i>&nbsp;{% trans 'kashta e-learning business model' %}
+              </a>
+            </li>
+
+            <li>
+              <a href="{% url 'Presentation:rgei-guide' %}">
+                <i class="fa fa-fas fa-border-all" aria-hidden="true"></i>&nbsp;{% trans 'kashta e-learning guide' %}
+              </a>
+            </li>
+
+            <li>
+              <a href="{% url 'Presentation:rgei-standards' %}">
+                <i class="fa fa-fas fa-border-all" aria-hidden="true"></i>&nbsp;{% trans 'kashta e-learning quality standards' %}
+              </a>
+            </li>
+
+            {% package_menu %}
+
+
+            <li>
+              <a href="{% url 'Presentation:work-methodologies' %}">
+                <i class="fa fa-fas fa-border-all" aria-hidden="true"></i>&nbsp;{% trans 'work methodologies' %}
+              </a>
+            </li>
+
+            <li>
+              <a href="{% url 'Presentation:governance' %}">
+                <i class="fa fa-fas fa-border-all" aria-hidden="true"></i>&nbsp;{% trans 'governance' %}
+              </a>
+            </li>
+
+            {% comment %} <li>
+              <a href="{% url 'Presentation:risks-management' %}">
+                <i class="fa fa-fas fa-border-all" aria-hidden="true"></i>&nbsp;{% trans 'risks management' %}
+              </a>
+            </li> {% endcomment %}
+
+            <li>
+              <a href="{% url 'Presentation:reports' %}">
+                <i class="fa fa-fas fa-border-all" aria-hidden="true"></i>&nbsp;{% trans 'reports and data analysis' %}
+              </a>
+            </li>
+
+            <li>
+              <a href="{% url 'Presentation:work-tools' %}">
+                <i class="fa fa-fas fa-border-all" aria-hidden="true"></i>&nbsp;{% trans 'work tools' %}
+              </a>
+            </li>
+
+            {% comment %} <li>
+              <a href="{% url 'Presentation:action-plan' %}">
+                <i class="fa fa-fas fa-border-all" aria-hidden="true"></i>&nbsp;{% trans 'action plan' %}
+              </a>
+            </li> {% endcomment %}
+
+            <li>
+              <a href="{% url 'Presentation:team-work' %}">
+                <i class="fa fa-fas fa-border-all" aria-hidden="true"></i>&nbsp;{% trans 'team work' %}
+              </a>
+            </li>
+          </ul>
+      </div>
+  </div>
+
+</nav>

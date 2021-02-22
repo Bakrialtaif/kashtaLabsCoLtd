@@ -1,0 +1,172 @@
+ssh root@161.35.133.74
+
+pip install -r requirements.txt
+||||
+
+# creating
+django-admin startproject myProject
+python manage.py startapp myApp
+
+
+# Run
+python manage.py runserver
+python manage.py runserver 8080
+python manage.py runserver 0:8000
+
+# configuration
+
+# Database
+python3 manage.py makemigrations
+python3 manage.py migrate
+python manage.py makemigrations --dry-run --verbosity 3
+find . -path "*/migrations/*.py" -not -name "__init__.py" ! -path '*/env/*' -delete
+find . -path "*/migrations/*.pyc" ! -path '*/env/*' -delete
+python manage.py sqlmigrate hrmgmt 0002
+
+graph_models -a -o myapp_models.png
+
+https://coderwall.com/p/mvsoyg/django-dumpdata-and-loaddata
+
+# Create
+python3 manage.py createsuperuser
+
+# Translation
+python3 manage.py makemessages -a
+python3 manage.py compilemessages
+
+# DataTable
+_MENU_ entries # show place
+
+# Tests
+python3 -m unittest -v test.py 
+python -m unittest discover -s tests/integration
+
+# requirments
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+
+# resful
+pip install djangorestframework
+
+# api 
+curl -X POST -d '{"username": "bakrialtaif","password": "123456"}' -H 'Content-Type: application/json' http://127.0.0.1:8000/api/auth/token/login/
+http POST http://localhost:8000/api/auth/token/login/ username='bakrialtaif' password="123456"
+http --form POST http://127.0.0.1:8000/snippets/ code="print(123)" title="my title" language="php"
+http -a bakrialtaif:123456 POST http://127.0.0.1:8000/snippets/ code="print(123)"
+
+
+
+
+
+https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
+
+
+# postgres
+
+sudo -u postgres psql
+
+[ createdb sammy ] 
+sudo -u postgres createdb sammy
+
+
+Heroku App:
+
+heroku git:remote -a your_app_name
+heroku run bash
+heroku run python manage.py migrate
+heroku run python manage.py createsuperuser
+heroku open
+heroku releases --app saidaaltaif
+heroku run bash --app saidaaltaif
+
+snsoplatform@gmail.com
+snsoplatform1234567
+
+{{LANGUAGE_START}}
+
+
+# Digital Ocean Preparation
+
+    ssh-keygen -t rsa
+    sudo apt-get update
+    sudo apt-get install build-essential libssl-dev gcc libpq-dev libffi-dev python-dev python3-pip binutils libproj-dev gdal-bin python3-wheel -y
+    pip3 install wheel
+    sudo apt-get install postgresql postgresql-contrib postgis postgresql-postgis
+    pip3 install virtualenv
+    virtualenv environment
+    source environment/bin/active
+    pip3 install -r requirements.txt
+
+# config postgres remotely 
+    [1] /etc/postgresql/12/main/postgresql.conf
+        listen_addresses = '*'  # Postgres, pretty please keep your ears open on everything. 
+    [2] /etc/postgresql/12/main/pg_hba.conf
+        host all all  0.0.0.0/0 md5
+    [3] sudo service postgresql restart
+    [4] sudo su - postgres
+    [5] psql
+    [6] list all users [\du ]
+    [7] change [root:postgres] user password [\password postgres]
+    [8] continue from pgAdmin4 Browser
+
+# Gunicorn
+    https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
+
+    [1] sudo vim /etc/systemd/system/gunicorn.service
+    [2] 
+
+    [Unit]
+    Description=gunicorn daemon
+    After=network.target
+
+    [Service]
+    User=david
+    Group=www-data
+    WorkingDirectory=/home/david/mywebsite
+    ExecStart=/home/david/mywebsite/venv/bin/gunicorn --workers 3 --bind unix:/home/david/mywebsite/mywebsite.sock mywebsite.wsgi:application
+
+    [Install]
+    WantedBy=multi-user.target
+
+
+    [3] sudo systemctl start gunicorn & sudo systemctl enable gunicorn
+
+sudo tail -F /var/log/nginx/error.log
+sudo service gunicorn restart
+
+# manage.py remove_stale_contenttypes
+
+
+#---------------------------------------------------------------------------------------------
+
+الهيكل ( الإدارات - الوظائف)
+التحضير والمحتوى التعليمي
+تسجيل الطلاب وأولياء الأمور
+منظومة الفعاليات والتقويم
+منظومة الإشعارات والرسائل القصيرة
+منظومة التدريس والتقييم
+
+
+# Emails 
+
+from django.core.mail import send_mail
+    subject = 'welcome to School'
+    message = f'Hi man, how are you, this is from your local system'
+    email_form = settings.EMAIL_HOST_USER
+    recipient_list = ['altaif.bakri@gmail.com',]
+    send_mail(
+        subject=subject,
+        message=message,
+        from_email=email_form,
+        recipient_list=recipient_list
+    )
+
+# Crone Jobs:
+    - daily profit value
+    - daily requests number
+    - daily total items requests number
+
+    - https://gutsytechster.wordpress.com/2019/06/24/how-to-setup-a-cron-job-in-django/
+
+    ./manage.py crontab add

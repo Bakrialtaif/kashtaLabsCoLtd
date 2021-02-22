@@ -1,0 +1,119 @@
+Learn Management System:
+# https://www.bau.edu.jo/bauar/units/LearnTechCenter/guidebook.aspx
+
+أفكار
+1- مدونة تقنيات التعليم
+2- بنك القصص القصيرة
+
+
+
+
+
+تحسينات:
+1- عمل مفتاح بشرح الألوان المختلفة المستخدمة بالنظام
+
+====================================================================================================
+
+
+# tools 
+https://www.pngwing.com
+https://www.freepik.com
+https://django-allauth.readthedocs.io/en/latest/
+https://learndjango.com/tutorials/django-allauth-tutorial
+https://books.agiliq.com/projects/django-api-polls-tutorial/en/latest/access-control.html
+(((((((((((((((((( منظومة المراجعة والإستشارات والتقييم ))))))))))))))))))) => تتحور لأتمتة معظم العمليات دون تدخل بشري.
+
+# to reade
+https://ar.wikipedia.org/wiki/%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9_%D8%A7%D9%84%D8%B7%D9%88%D8%A7%D8%B1%D8%A6
+https://ar.wikipedia.org/wiki/%D8%AA%D9%82%D9%86%D9%8A%D8%A9_%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA_%D9%81%D9%8A_%D8%A7%D9%84%D8%B5%D8%AD%D8%A9
+https://ec.europa.eu/idabc/en/document/2259/5926.html
+https://www.herc.ox.ac.uk/downloads/health_datasets/browse-data-sets/euphix-eu-public-health-information-knowledge-system
+https://ec.europa.eu/health/sites/health/files/indicators/docs/ev_20180606_co01_en.pdf
+https://blog.hlab.tech/lesson-1-a-step-by-step-guide-in-passing-data-to-excel-and-generating-a-pie-chart-using-python-3-7-openpyxl-and-pandas/
+https://github.com/HospitalRun/hospitalrun
+https://opal.openhealthcare.org.uk/docs/tutorial/
+
+
+
+# Testing :
+https://realpython.com/python-testing/
+https://realpython.com/python-cli-testing/#mocks
+https://realpython.com/testing-in-django-part-1-best-practices-and-examples/
+https://www.oreilly.com/library/view/lightweight-django/9781491946275/ch04.html
+https://dev.to/joshuadeguzman/definitive-guide-developing-restful-apis-using-python-django-and-drf-2h7e
+https://apptension.com/blog/2017/09/13/rest-api-using-django-rest-framework/
+https://codeburst.io/building-an-api-with-django-rest-framework-and-class-based-views-75b369b30396
+
+# Push notifications
+https://github.com/LPgenerator/django-db-mailer/tree/master/demo/demo
+
+
+********************************************************************************
+[1] transfere insert&update to form class
+
+
+
+142.93.169.231
+django.db.migrations.exceptions.InconsistentMigrationHistory: Migration Core.0001_initial is applied before its dependency P002.0002_auto_20200821_0850 on database 'default'.
+https://stackoverflow.com/questions/38996599/django-manage-py-migration-applied-before-its-dependency
+
+
+
+https://stackabuse.com/modified-preorder-tree-traversal-in-django/
+
+
+
+# الأداء المتوازن
+
+https://www.organizedchange.com/balanced-scorecard-BSC-Performance-Improvement-in-arabic.htm
+http://dr-ama.com/?p=781
+
+
+# Governance -------------------------------------------------------------------
+METHODOLOGIES:
+     COSO, ITIL, BiSL, ISO 27000, CMMI, TOGAF and PMBOK.
+
+COBIT:
+    Five processes are identified: 
+    [1] Evaluate, Direct and Monitor (EDM);
+    [2] Align, Plan and Organize (APO);
+    [3] Build, Acquire and Implement (BAI);
+    [4] Deliver, Service and Support (DSS);
+    [5] Monitor, Evaluate and Assess (MEA).
+
+
+# التعديلات
+1- إضافة برنامج خاص بالحوكمة
+2- إمكانية إضافة  ( أصحاب المصلحة ) أو ( الممارسون ) إلى أصناف المستخدمين.
+3- عمل حصر للأصول التقنية ( المادية والبرمجية ) وإجراء التقييمات وحصر البيانات اللازمة بشأنها.
+
+more links in Governance:
+https://www.maaal.com/archives/20181216/116181
+
+
+
+
+
+    for lp in range(100):
+        fake = Faker()
+        f = QuestionForm()
+        f.save(commit=False)    
+        Content.objects.create(
+            type=list_of_content_types().QUESTION,
+            title=fake.sentence(),
+            body='',
+            description='',
+            notes='',
+            link=fake.url(),
+            direction='',
+            activation=True,
+            file='',
+            difficulty_level=random.choice([list_of_difficulty_levels().DIFFICULT, list_of_difficulty_levels().MIDDLE, list_of_difficulty_levels().EASY]),
+            answer_1=fake.address(),
+            answer_2=fake.address(),
+            answer_3=fake.address(),
+            answer_4=fake.address(),
+            order=1,
+            lession=lession,
+            created_by=request.user
+        )

@@ -1,0 +1,48 @@
+  {% if messages %}
+    {% for message in messages %}
+
+        {% if message.tags == 'success' %}
+            <div id='alert' class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>{{ message }}.
+            </div>
+        {% endif%}
+
+        {% if message.tags == 'info' %}
+            <div id='alert' class="alert alert-info alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>{{ message }}.
+            </div>
+        {% endif%}
+
+        {% if message.tags == 'warning' %}
+            <div id='alert' class="alert alert-warning alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>{{ message }}.
+            </div>
+        {% endif%}
+
+        {% if message.tags == 'error' %}
+            <div id='alert' class="alert alert-danger alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                {{ message }}
+            </div>
+        {% endif%}
+
+    {% endfor %}
+{% endif %}
+
+{% if form.errors %}
+    <div class="alert alert-error">
+      <h4>Please fix the following errors</h4>
+      <ul>
+        {% for field in form %}
+          {% if field.errors %}
+            {% for error in field.errors %}
+              <li><a href="#id_{{ field.name }}" class="error">{{ error|escape }}</a></li>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+      {% if form.non_field_errors %}
+        {{ form.non_field_errors }}
+      {% endif %}
+    </div>
+  {% endif %}

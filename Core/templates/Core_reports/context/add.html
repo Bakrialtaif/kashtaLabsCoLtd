@@ -1,0 +1,23 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block page_title %}{% trans 'add' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:reports-dimension-context' dimension_id=dimension.pk %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{{ dimension }}</li>
+    <li class="breadcrumb-back">{% trans 'add'%}</li>
+{% endblock %}
+{% block content %}
+<section class="add">
+    <form action="{% url 'Core:reports-dimension-context-insert' dimension_id=dimension.pk %}" method="POST">
+        {% csrf_token %}
+        <table class="table">
+        {{ form.as_table }}
+        <tr>
+            <td></td>
+            <td><button type="submit" class="btn btn-success">{% trans 'save' %}</button></td>
+        </tr>
+        </table>
+    </form>
+</section>
+{% endblock %}

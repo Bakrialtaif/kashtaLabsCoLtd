@@ -1,0 +1,107 @@
+{% load static %}
+{% load i18n %}
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#data" data-toggle="tab">{% trans 'basic data '%}</a></li>
+    <li><a href="#responsibilities" data-toggle="tab">{% trans 'responsibilities' %}</a></li>
+    <li><a href="#duties" data-toggle="tab">{% trans 'duties' %}</a></li>
+    <li><a href="#privileges" data-toggle="tab">{% trans 'privileges' %}</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div class="tab-pane fade in active" id="data">
+        {% csrf_token %}
+        <table class="table table-responsive">
+            {{ form.as_table }}
+            <tr>
+                <td width="15%"></td>
+                <td width="85%"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="tab-pane fade" id="responsibilities">
+        {% regroup responsibilities|dictsort:'dimension' by dimension as responsibilitiesList %}
+        {% for responsibilityObject in responsibilitiesList%}
+            <div class="well">
+                <h3>{% trans responsibilityObject.grouper %}</h3>
+                {% for responsibility in responsibilityObject.list %}
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="responsibilities" value="{{ responsibility.pk }}" {% if responsibility.pk in responsibilitiesOldList %} checked {% endif %}>{{ responsibility.title }}
+                        </label>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="tab-pane fade" id="duties">
+        {% regroup duties|dictsort:'dimension' by dimension as dutiesList %}
+        {% for dutyObject in dutiesList%}
+            <div class="well">
+                <h3>{% trans dutyObject.grouper %}</h3>
+                {% for duty in dutyObject.list %}
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="duties" value="{{ duty.pk }}" {% if duty.pk in dutiesOldList %} checked {% endif %}>{{ duty.title }}
+                        </label>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="tab-pane fade" id="privileges">
+        
+        <div class="row">
+
+            <!-- Navigation Buttons -->
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked" id="myTabs">
+                    {% for program in programs %}
+                        {% if program.name in request.organization.get_programs %}
+                            <li {% if forloop.counter == 1 %} class="active" {% endif %}><a href="#{{ program.name }}" data-toggle="pill">
+                            <span class="badge badge-info">{{ forloop.counter }}</span>&nbsp;{% trans program.name %}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Content -->
+            <div class="col-md-9">
+                <div class="tab-content">
+                    {% for program in programs %}
+                        <div class="tab-pane {% if forloop.counter == 1 %} active {% endif %}" style="padding-top: 0px;" id="{{ program.name }}">
+                            {% for menu in program.children.all %}
+                                <div class="well">
+
+                                    <h4>{% trans menu.name %}</h4>
+
+                                    <table class="table">
+                                        {% for operation in menu.children.all %}
+                                            <tr>
+                                                <td width="5%">&nbsp;</td>
+                                                <td width="25%">{% trans operation.name %}</td>
+                                                <td width="70%">
+                                                    <div class="form-group">
+                                                        {% for permit in operation.permits.all %}
+                                                            <div class="checkbox">
+                                                                <label>
+                                                                    <input type="checkbox" name="permits" value="{{ permit.pk }}" {% if permit.pk in card.get_permits %} checked {% endif %}>{{ permit }}
+                                                                </label>
+                                                            </div>
+                                                        {% endfor %}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

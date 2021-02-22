@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load static %}
+<script>
+    $(document).ready(function() {
+        $('.{{ className }}').datepicker({
+            showOn: "button",
+            buttonImage: "{% static 'theme/images/calendar.gif' %}",
+            buttonImageOnly: true,
+            buttonText: "{% trans 'Select date' %}",
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'yy-mm-dd'
+        });
+    });
+    </script>

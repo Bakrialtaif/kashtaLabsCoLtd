@@ -1,0 +1,36 @@
+{% load static %}
+{% load i18n %}
+
+    <ul class="list-unstyled">
+
+        <li>
+            <a href="{% url 'P001:profile' %}" {% if request.resolver_match.app_name == 'P002' %} class="active" {% endif %}>
+            <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'basic data' %}
+            </a>
+        </li>
+
+        {% if education_data in request.user.profile.get_data_componenets %}
+            <li>
+                <a href="{% url 'P001:educations' %}" {% if request.resolver_match.app_name == 'P002' %} class="active" {% endif %}>
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'education data' %}
+                </a>
+            </li>
+        {% endif %}
+
+        {% if work_data in request.user.profile.get_data_componenets %}
+            <li>
+                <a href="{% url 'P001:works' %}" {% if request.resolver_match.app_name == 'P002' %} class="active" {% endif %}>
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'working data' %}
+                </a>
+            </li>
+        {% endif %}
+
+        {% if training_data in request.user.profile.get_data_componenets %}
+            <li>
+                <a href="{% url 'P001:training' %}" {% if request.resolver_match.app_name == 'P002' %} class="active" {% endif %}>
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'training data' %}
+                </a>
+            </li>
+        {% endif %}
+
+    </ul>

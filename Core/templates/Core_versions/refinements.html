@@ -1,0 +1,54 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load presentation_tags %}
+{% block page_title %}{% trans 'refinements' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:versions' %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{{ version }}</li>
+    <li class="breadcrumb-back">{% trans 'refinements' %}</li>
+{% endblock %}
+{% block content %}
+<section class="Core">
+    <div class="well">
+        <h3>{{ version.name }}</h3>
+        <p class="hint">{{ version.description }}</p>
+        <p class="hint">{{ version.start_date }}&nbsp;&raquo;&nbsp;{{ version.end_date }}</p>
+        <p class="hint">
+            {% trans 'QUEUEING' %}&nbsp;&raquo;&nbsp;{{ version.get_queueing_refinements.count }}<br>
+            {% trans 'PROCESSING' %}&nbsp;&raquo;&nbsp;{{ version.get_processing_refinements.count }}<br>
+            {% trans 'DONE' %}&nbsp;&raquo;&nbsp;{{ version.get_done_refinements.count }}<br>
+        </p>
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr role="row">
+                <th style="width: 5%;"></th>
+                <th style="width: 30%; text-align: {{ LANGUAGE_START }};">{% trans 'refinement' %}</th>
+                <th style="width: 40%; text-align: {{ LANGUAGE_START }};">{% trans 'description' %}</th>
+                <th style="width: 10%; text-align: center;">{% trans 'status' %}</th>
+                <th style="width: 15%; text-align: {{ LANGUAGE_START }};">{% trans 'duration' %}</th>
+            </tr>
+        </thead>
+        <tbody>                
+        {% for refinement in version.refinements.all %}
+            <tr role="row" class="odd">
+                <td style="text-align: center;">{{ forloop.counter }}</td>
+                <td>
+                    {{ refinement.component.parent.parent.parent }}&nbsp;&raquo;&nbsp;
+                    {{ refinement.component.parent.parent }}&nbsp;&raquo;&nbsp;
+                    {{ refinement.component.parent }}&nbsp;&raquo;&nbsp;
+                    {{ refinement.component }}
+                </td>
+                <td>
+                    {{ refinement }}
+                    <p class="hint">{{ refinement.description }}</p>
+                </td>
+                <td align="center">{% trans refinement.get_status|safe %}</td>
+                <td align="{{ LANGUAGE_START }}">{{ refinement.start_date }}&nbsp;&raquo;&nbsp;{{ refinement.end_date }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

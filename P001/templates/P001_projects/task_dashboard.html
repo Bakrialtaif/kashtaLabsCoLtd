@@ -1,0 +1,75 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load general_tags %}
+{% block page_title %}{% trans 'P001' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'P001:project-dashboard' project_id=project.pk %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{{ project }}</li>
+    <li class="breadcrumb-back">{{ task }}</li>
+{% endblock %}
+{% block content %}
+<section class="add">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans 'the task' %}</div>
+                <div class="panel-body">
+                    <p>{{ task.description }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans 'more details' %}</div>
+                <div class="panel-body">
+                    {% BrowseModelData modelObject=task %}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            {% if task.assigned_to.pk == request.user.pk and task.completion == OPEN %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">{% trans 'task status' %}</div>
+                    <div class="panel-body">
+                        <form action="{% url 'P001:project-task-update-execution-status' project_id=project.pk id=task.pk %}" method="POST">
+                            {% csrf_token %}
+                                <div class="form-group">
+                                    {% for item in execution_status_list %}
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="execution_status" id="{{ item.0 }}" value="{{ item.0 }}" {% if task.execution_status == item.0 %} checked {% endif %}>{{ item.1 }}
+                                        </label>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            <button type="submit" class="btn btn-warning">{% trans 'update' %}</button>
+                        </form>
+                    </div>
+                </div>
+            {% endif %}
+            {% if project.manager.pk == request.user.pk %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">{% trans 'completion' %}</div>
+                    <div class="panel-body">
+                        <form action="{% url 'P001:project-task-update-completion' project_id=project.pk id=task.pk %}" method="POST">
+                            {% csrf_token %}
+                                <div class="form-group">
+                                    {% for item in completion_status_list %}
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="completion_status" id="{{ item.0 }}" value="{{ item.0 }}" {% if task.completion == item.0 %} checked {% endif %}>{% trans item.0 %}
+                                        </label>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            <button type="submit" class="btn btn-warning">{% trans 'update' %}</button>
+                        </form>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% load static %}
+{% load i18n %}
+{% load workflow_tags %}
+
+{% if status %}
+    <span class="hint">[&nbsp;{% trans request.status %}&nbsp;]</span>
+{% endif %}
+
+&nbsp;
+
+{% SendRequestLink requestObject=request %}
+
+&nbsp;
+
+{% CancelRequestLink requestObject=request %}
+
+&nbsp;
+
+{% if browse %}
+    <a href="{% url 'Core:request-prepare' wf_request_id=request.pk %}" class="general-link">
+        <i class="fa fa-edit" aria-hidden="true"></i>&nbsp;{% trans 'browse' %}
+    </a>
+{% endif %}
+
+{% if log %}
+    <a href="{% url 'Core:request-logs' wf_request_id=request.pk %}" data-toggle='modal' data-target='#modal' class="general-link">{% trans 'logs' %}</a>
+{% endif %}

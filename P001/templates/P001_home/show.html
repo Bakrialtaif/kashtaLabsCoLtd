@@ -1,0 +1,164 @@
+{% extends "base/header/system_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load general_tags %}
+{% block page_title %}{% trans 'P001' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back">{% trans 'P001' %}</li>
+    <li class="breadcrumb-back">{{ user.get_full_name }}</li>
+{% endblock %}
+{% block content %}
+<section class="P001">
+
+    <div class="row">
+
+        <div class="col-lg-8 col-md-12 col-sm-12">
+            <div class="row">
+            
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <img src="{{ user.profile.documents.first.file.url }}" class="img-responsive img-thumbnail" style="">
+                </div>
+
+                <div class="col-lg-9 col-md-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3>{{ user.get_full_name }}</h3>
+                        </div>
+                        <div class="col-lg-12">
+                            <span class="hint">
+                                {% for classify in request.user.classifies.all %}
+                                    [&nbsp;{{ classify.classification }}&nbsp;]&nbsp;
+                                {% endfor %}
+                                {% for StudentClassifies in request.user.profile.get_student_academic_year_classifies %}
+                                    [&nbsp;{{ StudentClassifies }}&nbsp;]&nbsp;
+                                {% endfor %}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                 </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12 col-sm-12" style="align-items: left;">    
+
+            <blockquote class="quote-box">
+                <p class="quotation-mark">&nbsp;</p>
+                <p class="quote-text">{{ quote.statement}}</p>
+                {% if quote.author %}<p class="quote-author">-&nbsp;{{ quote.author}}&nbsp;-</p>{% else %}<p>&nbsp;</p>{% endif %}
+            </blockquote>
+
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    {% comment %} {% dashboard_projects_wedget_tag %} {% endcomment %}
+
+    <div class="divider"></div>
+    
+    {% comment %} {% dashboard_customers_wedget_tag %} {% endcomment %}
+
+    {% if request.user.vacancies.basic_vacancy %}
+    
+        <div class="divider"></div>                        
+
+        <div class="row regulations">        
+            <div class="col-lg-6 col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <i class="fa fa-tasks fa-5x"></i>
+                            </div>
+                            <div class="col-xs-8 text-right">
+                                <div class="huge">1</div>
+                                <div>{% trans 'vision and mission'%}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url 'P002:organization-vision-mission' %}" data-toggle='modal' data-target='#modal'>
+                        <div class="panel-footer">
+                            <span class="pull-right">{% trans 'vision and mission' %}</span>
+                            <span class="pull-left"><i class="fa fa-arrow-circle-left"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <i class="fa fa-tasks fa-5x"></i>
+                            </div>
+                            <div class="col-xs-8 text-right">
+                                <div class="huge">2</div>
+                                <div>{% trans 'hr regulations' %}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% for sheet in P004_sheets%}
+                        <a href="{% url 'Core:sheet-details' sheet_id=sheet.pk %}" data-toggle='modal' data-target='#modal'>
+                            <div class="panel-footer">
+                                <span class="pull-right">{% trans sheet.code %}</span>
+                                <span class="pull-left"><i class="fa fa-arrow-circle-left"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <i class="fa fa-tasks fa-5x"></i>
+                            </div>
+                            <div class="col-xs-8 text-right">
+                                <div class="huge">3</div>
+                                <div>{% trans 'it regulations' %}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% for sheet in P002_sheets%}
+                        <a href="{% url 'Core:sheet-details' sheet_id=sheet.pk %}" data-toggle='modal' data-target='#modal'>
+                            <div class="panel-footer">
+                                <span class="pull-right">{% trans sheet.code %}</span>
+                                <span class="pull-left"><i class="fa fa-arrow-circle-left"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <i class="fa fa-tasks fa-5x"></i>
+                            </div>
+                            <div class="col-xs-8 text-right">
+                                <div class="huge">4</div>
+                                <div>{% trans 'requests regulation' %}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url 'P001:requests-regulation' %}">
+                        <div class="panel-footer">
+                            <span class="pull-right">{% trans 'requests regulation' %}</span>
+                            <span class="pull-left"><i class="fa fa-arrow-circle-left"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</section>
+{% endblock %}

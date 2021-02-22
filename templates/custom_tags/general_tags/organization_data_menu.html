@@ -1,0 +1,23 @@
+{% load static %}
+{% load i18n %}
+    <ul class="list-unstyled">
+
+        <li>
+            <a href="{% url 'P002:organization' %}">
+            <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'basic data' %}
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'P002:organization-user-classifications' %}">
+            <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'user classifications' %}
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'P002:organization-days-in-week' %}">
+            <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'week days' %}
+            </a>
+        </li>
+
+    </ul>

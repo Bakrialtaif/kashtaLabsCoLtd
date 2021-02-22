@@ -1,0 +1,23 @@
+{% extends "base/header/modal_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block modal-header %}{% trans wf_request.get_procedure.code %} : {% trans 'correction checker' %}{% endblock %}
+{% block modal-body %}
+<section class="tests">
+    <table class="table">
+        <tr>
+            <th width="5%"></th>
+            <th width="40%">{% trans 'code' %}</th>
+            <th width="55 %">{% trans 'error messages' %}</th>
+        </tr>
+        {% for failure in wf_request.get_procedure.failures %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ failure.code }}</td>
+                <td><i class="fa fa-far fa-calendar-times text-danger"></i>&nbsp;{{ failure.message }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</section>
+{% endblock %}
+{% block modal-footer %}{% endblock %}

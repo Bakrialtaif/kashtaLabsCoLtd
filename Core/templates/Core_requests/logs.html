@@ -1,0 +1,12 @@
+{% extends "base/header/modal_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block modal-header %}{% trans 'send request' %}{% endblock %}
+{% block modal-body %}
+<section class="send">
+    {% for log in wf_request.get_object.logs.all %}
+        {{ log }}
+    {% endfor %}
+</section>
+{% endblock %}
+{% block modal-footer %}{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base/header/modal_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block modal-header %}{% trans sheet.code %}{% endblock %}
+{% block modal-body %}
+    {% for paragraph in sheet.paragraphs.all %}
+        <h3>{{ paragraph.title }}</h3>
+        <p>{{ paragraph.body|linebreaks }}</p>    
+    {% endfor %}
+{% endblock %}
+{% block modal-footer %}{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load workflow_tags %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{{ back_url_path }}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'workflow library' %}</li>
+    <li class="breadcrumb-back">{{ wf_request }}</li>
+{% endblock %}
+{% block content %}
+<section class="send-request">
+    {% comment %} {% if wf_request.category == 'QUESTIONNAIRE' %}
+        <div class="header-links">
+            <div class="row">
+                <div class="col-lg-6">
+                    {% SendRequestLink requestObject=wf_request %}
+                    {% CancelRequestLink requestObject=wf_request %}
+                </div>
+                <div class="col-lg-6">
+                    <span class="pull-left">
+                        {% comment %} {% RequestMoveBackward requestObject=wf_request %}
+                        &nbsp;|&nbsp;
+                        {% RequestMoveForward requestObject=wf_request %}
+                    </span>
+                </div>
+            </div>
+        </div>
+    {% endif %} {% endcomment %}
+
+    <div class="row">
+        <div class="col-lg-6">
+            {% RequestData requestObject=wf_request %}
+        </div>
+        <div class="col-lg-6">
+            {% comment %} {% ActionTaskForm requestObject=wf_request action_id=wf_request.action.pk %} {% endcomment %}
+        </div>
+    </div>
+
+    {% RequestDocuments requestObject=wf_request %}
+    {% RequestLog requestObject=wf_request back_url=back_url %}
+    
+</section>
+{% endblock %}
+{% block footer %}
+    {% WorkflowChartDiagram action_id=start_action_pk current_id=wf_request.action.pk containerId='chart-container' %}    
+{% endblock %}

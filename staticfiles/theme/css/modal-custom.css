@@ -1,0 +1,55 @@
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 0px;
+	color: #333 !important;
+}
+
+.modal-header {
+	min-height: 16.42857143px;
+	padding: 30px;
+  background-color: #f3f0f0;
+  border-bottom: 1px solid #d7d5d5;
+}
+
+.modal-footer {
+	padding: 30px 30px 20px;
+	margin-top: 15px;
+	text-align: right;
+  background-color: #f3f0f0;
+  border-top: 1px solid #d7d5d5;
+}
+
+.delete  {
+	color: #000 !important;
+	text-decoration: none;
+}
+
+.delete .submit-link {
+	color: #fff !important;
+	text-decoration: none;
+}
+
+.edit  {
+	color: #000 !important;
+	text-decoration: none;
+}
+
+.add  {
+	color: #000 !important;
+	text-decoration: none;
+}

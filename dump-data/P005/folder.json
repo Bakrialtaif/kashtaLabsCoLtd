@@ -1,0 +1,24 @@
+[
+{
+    "model": "P003.folder",
+    "pk": 1,
+    "fields": {
+        "user": null,
+        "type": "ORGANIZATION_INBOX",
+        "name": "INBOX",
+        "about": "ORGANIZATION INBOX DESCRIPTION",
+        "order": 1
+    }
+},
+{
+    "model": "P003.folder",
+    "pk": 2,
+    "fields": {
+        "user": null,
+        "type": "ORGANIZATION_OUTBOX",
+        "name": "OUTBOX",
+        "about": "ORGANIZATION OUTBOX DESCRIPTION",
+        "order": 2
+    }
+}
+]

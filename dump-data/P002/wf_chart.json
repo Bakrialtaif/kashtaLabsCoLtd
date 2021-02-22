@@ -1,0 +1,13 @@
+[
+{
+    "model": "P002.wf_chart",
+    "pk": 51,
+    "fields": {
+        "content_type": 28,
+        "name": "\u0627\u0644\u0645\u062e\u0637\u0637 \u0627\u0644\u0623\u0648\u0644",
+        "order": 0,
+        "diagram": "start=>start: _('start) \\n end=>end: _('end') \\n\\n start->end",
+        "status": true
+    }
+}
+]

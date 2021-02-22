@@ -1,0 +1,77 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load reports_tags %}
+{% block page_title %}{% trans 'tasks dashboard' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:reports'%}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'Core' %}</li>
+    <li class="breadcrumb-back">{% trans 'reports' %}</li>
+    <li class="breadcrumb-back">{{ dimension }}</li>
+{% endblock %}
+{% block content %}
+    <section class="reports">
+        <div class="header-links">
+            <a href="{% url 'Core:reports-dimension-context-add' dimension_id=dimension.pk %}">
+                {% trans 'add' %}
+            </a>
+        </div>
+        {% for context in dimension.children.all %}
+            <div class="well">
+                <div class="header-links">
+                    <h4>{{ context }}</h4>
+                    <p class="hint">{{ context.about }}</p>
+                    <p>
+                        <a href="{% url 'Core:reports-dimension-context-edit' dimension_id=dimension.pk context_id=context.pk %}">{% trans 'edit' %}</a>
+                        &nbsp;
+                        <a href="{% url 'Core:reports-dimension-context-confirm' dimension_id=dimension.pk context_id=context.pk %}" data-toggle='modal' data-target='#modal' >{% trans 'delete' %}</a>
+                        &nbsp;
+                        <a href="{% url 'Core:reports-dimension-context-case-add' dimension_id=dimension.pk context_id=context.pk %}">{% trans 'add' %}</a>
+                    </p>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td width="5%">&nbsp;</td>
+                            <td width="20%" style="text-align: right;">{% trans 'context case' %}</td>
+                            <td width="30%" style="text-align: right;">{% trans 'description' %}</td>
+                            <td width="15%" style="text-align: center;">{% trans 'facts' %}</td>
+                            <td width="15%" style="text-align: center;">{% trans 'reports' %}</td>
+                            <td width="15%">{% trans 'settings' %}</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for case in context.children.all %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ case }}</td>
+                                <td>{{ case.about }}</td>
+                                <td align="center">
+                                    <a href="{% url 'Core:reports-dimension-context-case-facts' dimension_id=dimension.pk context_id=context.pk case_id=case.pk %}">
+                                        {% trans 'facts' %}
+                                        &nbsp;[&nbsp;{{ case.facts.count }}&nbsp;]
+                                    </a>
+                                </td>
+                                <td align="center">
+                                    <a href="{% url 'Core:reports-dimension-context-edit' dimension_id=dimension.pk context_id=context.pk %}">{% trans 'the analysis' %}</a>
+                                </td>
+                                <td align="center">
+                                    <a href="{% url 'Core:reports-dimension-context-case-edit' dimension_id=dimension.pk context_id=context.pk case_id=case.pk %}">{% trans 'edit' %}</a>
+                                    &nbsp;
+                                    <a href="{% url 'Core:reports-dimension-context-confirm' dimension_id=dimension.pk context_id=context.pk %}" data-toggle='modal' data-target='#modal' >{% trans 'delete' %}ss</a>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+    </section>
+    <div class="col-lg-12" style="direction: ltr; text-align: center">
+        <div id="chartContainer"></div>
+    </div>
+{% endblock %}
+{% block footer %}
+    {% ReportElementsDiagram element_id=dimension.pk current_id=dimension.pk containerId='chartContainer' %}
+{% endblock %}

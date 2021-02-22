@@ -1,0 +1,45 @@
+{% load static %}
+{% load i18n %}
+    <ul class="list-unstyled">
+
+        <li>
+            <a href="{% url 'P001:my-requests' %}" {% if request.resolver_match.app_name == 'P002' %} class="active" {% endif %}>
+            <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'summary' %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P001:permissions' %}" {% if request.resolver_match.app_name == 'P002' %} class="active" {% endif %}>
+            <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'permission requests' %}
+            </a>
+        </li>
+        <li>
+            <a href="#" {% if request.resolver_match.app_name == 'P002' %} class="active" {% endif %}>
+            <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'leave requests' %}
+            </a>
+        </li>
+        <li>
+            <a href="#" {% if request.resolver_match.app_name == 'P002' %} class="active" {% endif %}>
+            <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'extra work requests' %}
+            </a>
+        </li>
+        <li>
+            <a href="#" {% if request.resolver_match.app_name == 'P002' %} class="active" {% endif %}>
+            <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'extra work payment requests' %}
+            </a>
+        </li>
+        <li>
+            <a href="#" {% if request.resolver_match.app_name == 'P002' %} class="active" {% endif %}>
+            <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'mandate requests' %}
+            </a>
+        </li>
+        <li>
+            <a href="#" {% if request.resolver_match.app_name == 'P002' %} class="active" {% endif %}>
+            <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'mandate payment requests' %}
+            </a>
+        </li>
+        <li>
+            <a href="#" {% if request.resolver_match.app_name == 'P002' %} class="active" {% endif %}>
+            <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'mandate requests' %}
+            </a>
+        </li>
+    </ul>

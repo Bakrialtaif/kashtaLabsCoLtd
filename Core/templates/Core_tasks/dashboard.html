@@ -1,0 +1,44 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load general_tags %}
+{% load workflow_tags %}
+
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{{ back_url_path }}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'workflow library' %}</li>
+    <li class="breadcrumb-back">{{ task.request }}</li>
+{% endblock %}
+{% block content %}
+<section class="send-request">
+    {% if task.action.pk == task.request.action.pk %}
+        <div class="row">
+            <div class="col-lg-12">
+                <span class="pull-right">
+                    {% RequestMoveBackward requestObject=task.request %}
+                    &nbsp;|&nbsp;
+                    {% RequestMoveForward requestObject=task.request %}
+                </span>
+            </div>
+        </div>
+        <hr>
+    {% endif %}
+    <div class="row">
+        <div class="col-lg-6">
+            {% RequestData requestObject=task.request %}
+        </div>
+        <div class="col-lg-6">
+            {% if task.action.pk == task.request.action.pk %}
+                {% ActionTaskForm requestObject=task.request action_id=task.request.action.pk %}
+            {% else %}
+                {% comment %} {% BrowseModelData modelObject=task %} {% endcomment %}
+            {% endif %}
+        </div>
+    </div>
+    {% RequestDocuments requestObject=task.request %}
+    {% RequestLog requestObject=task.request back_url=back_url %}
+</section>
+{% endblock %}
+{% block footer %}
+    {% comment %} {% WorkflowChartDiagram action_id=start_action_pk current_id=task.request.action.pk containerId='chart-container' %}     {% endcomment %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% load static %}
+{% load i18n %}
+
+{% if requestObject.status == under_proccess and requestObject.action.parent.type != start %}
+    <a href="{% url 'Core:request-move' wf_request_id=requestObject.pk type=move_type %}" class="general-link">
+        <i class="fa fa-fas fa-step-forward" aria-hidden="true"></i>&nbsp;{% trans 'send backward' %}
+    </a>
+{% else %}
+    <span class="hint">{% trans 'send backward' %}</span>
+{% endif %}

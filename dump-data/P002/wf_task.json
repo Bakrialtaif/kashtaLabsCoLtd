@@ -1,0 +1,18 @@
+[
+{
+    "model": "P002.task",
+    "pk": 14,
+    "fields": {
+        "chart": 51,
+        "action": 977,
+        "request": 10,
+        "assigned_by": 1,
+        "assigned_to": 1,
+        "assigned_date": "2020-09-02",
+        "duration": 3,
+        "end_date": "2020-09-05",
+        "priority": "NOT_IMPORTANT_AND_NOT_URGENT",
+        "execution_date": null
+    }
+}
+]

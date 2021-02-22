@@ -1,0 +1,41 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load general_tags %}
+{% load presentation_tags %}
+{% block page_title %}{% trans 'procedure dashboard' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{{ back_url.url }}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{{ procedure.get_title }}</li>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="well">
+                {% BrowseModelData modelObject=procedure.get_object %}
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="well">
+                <table class="table">
+                    <tr>
+                        <td style="width: 35%; text-align: left;">{% trans 'procedure fail conditions' %}<td>
+                        <td style="width: 65%; text-align: right;">{{ procedure.correction_status.checks_false }}<td>
+                    </tr>
+                    <tr>
+                        <td style="width: 35%; text-align: left;">{% trans 'procedure status' %}<td>
+                        <td style="width: 65%; text-align: right;">{{ procedure.status }}<td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="well" style="direction: ltr; text-align: center">
+                <div id="chartContainer"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+    {% ComponentDiagram component_id=procedure.get_object.procedure.component.parent.parent.parent.parent.pk current_id=procedure.get_object.procedure.component.parent.parent.pk containerId='chartContainer' procedure_id=procedure.get_object.procedure.pk specific_node_tree=procedure.get_object.procedure.component %}
+{% endblock %}

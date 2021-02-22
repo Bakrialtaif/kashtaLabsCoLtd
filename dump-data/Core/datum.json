@@ -1,0 +1,13 @@
+[
+{
+    "model": "Core.datum",
+    "pk": 1,
+    "fields": {
+        "fact": 1,
+        "code": "profit",
+        "type": "NUMERIC",
+        "translatable": true,
+        "order": 1
+    }
+}
+]

@@ -1,0 +1,160 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ request.organization }} : {% block page_title %}{% endblock %}</title>
+
+    {% if request.LANGUAGE_CODE == 'ar' %}
+
+        <!-- Bootstrap Core CSS -->
+        <link href="{% static 'theme/css/bootstrap.min.css' %}" rel="stylesheet">
+        
+        <!-- Custom CSS -->
+        <link href="{% static 'theme/css/sb-admin-2.css' %}" rel="stylesheet">
+
+        <link href="{% static 'theme/css/system-custom.css' %}" rel="stylesheet" type="text/css">
+
+    {% endif %}
+
+    {% if request.LANGUAGE_CODE == 'en' %}
+
+        <!-- Core CSS - Include with every page -->
+        <link href="{% static 'theme-ltr/css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- SB Admin CSS - Include with every page -->
+        <link href="{% static 'theme-ltr/css/sb-admin.css' %}" rel="stylesheet">
+        <link href="{% static 'theme-ltr/css/system-custom.css' %}" rel="stylesheet" type="text/css">
+
+    {% endif %}
+
+    <!-- Custom Fonts -->
+    <link href="{% static 'fontawesome/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- Custom css -->
+    {% block app_custom_css %}{% endblock %}    
+    {% block header %}{% endblock %}
+    
+</head>
+
+<body>
+
+    <div id="wrapper"> 
+
+        {% if request.LANGUAGE_CODE == 'ar' %}
+            {% include 'base/navbar/system_navbar.html' %}
+        {% endif %}
+
+        {% if request.LANGUAGE_CODE == 'en' %}
+            {% include 'base/navbar/system_navbar_ltr.html' %}
+        {% endif %}
+
+        <div id="page-wrapper">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            {% block crumbs %}{% endblock %}
+                        </ol>
+                    </nav>
+                    {% include 'base/messages.html' %}
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Modal -->
+    <div id="modal" class="modal fade modal-open" role="dialog" tabindex='-1'>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content"></div>
+    </div>
+    </div>
+    
+    {% if request.LANGUAGE_CODE == 'ar' %}
+        <!-- jQuery Version 1.11.0 -->
+        <script src="{% static 'theme/js/jquery-1.11.0.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'theme/css/jquery-ui.css' %}">
+        <script src="{% static 'theme/js/jquery-ui.js' %}"></script>
+
+        <script type="text/javascript" language="javascript" src="{% static 'DataTable/1.10.21-js-jquery.dataTables.min.js.js'%}"></script>
+
+        <script type="text/javascript" class="init">	
+        
+            $(document).ready(function() {
+
+                $('.datepicker').datepicker({
+                    dateFormat: 'yy-mm-dd'
+                    });
+
+                $('#table_of_data').DataTable({
+                    "pageLength": 50,
+                    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                });
+
+                setTimeout(function () {  
+                // Closing the alert 
+                    $('#alert').alert('close'); 
+                }, 2000); 
+
+            } );
+
+            // Fix modal to load fresh content every time
+            $("#modal").on('hidden.bs.modal', function () {
+                $(this).removeData('bs.modal');
+            });
+
+        </script>
+
+        <style type="text/css">
+            .dataTables_length{}
+            .dataTables_filter {
+                color: red !important;
+                float: left;
+
+            }
+
+        </style>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{% static 'theme/js/bootstrap.min.js' %}"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="{% static 'theme/js/sb-admin-2.js' %}"></script>
+        <script src="{% static 'theme/js/custom.js' %}"></script>    
+
+    {% endif %}
+
+
+    {% if request.LANGUAGE_CODE == 'en' %}
+
+        <!-- Core Scripts - Include with every page -->
+        <script src="{% static 'theme-ltr/js/jquery-1.10.2.js' %}"></script>
+        <script src="{% static 'theme-ltr/js/bootstrap.min.js' %}"></script>
+
+        <!-- SB Admin Scripts - Include with every page -->
+        <script src="{% static 'theme-ltr/js/sb-admin.js' %}"></script>
+
+    {% endif %}
+
+
+    {% block tags %}{% endblock %}
+    {% block footer %}{% endblock %}
+
+
+
+</body>
+
+</html>

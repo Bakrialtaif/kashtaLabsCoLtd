@@ -1,0 +1,20 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$3LLChAoDCYyg$1hDRAWp2nH8FINF2GQ7RpyFWa1gvb/TgIjouS4Ef2Gs=",
+        "last_login": "2020-10-15T12:28:14.237Z",
+        "is_superuser": true,
+        "username": "bakrialtaif",
+        "first_name": "",
+        "last_name": "",
+        "email": "altaif.bakri@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-10-15T11:59:48.095Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

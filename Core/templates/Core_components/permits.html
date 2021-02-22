@@ -1,0 +1,42 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load presentation_tags %}
+{% block page_title %}{% trans 'home' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:program-dashboard' package_id=package.pk program_id=program.pk %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{{ package}}</li>
+    <li class="breadcrumb-back">{{ program}}</li>
+    <li class="breadcrumb-back">{{ menu }}</li>
+    <li class="breadcrumb-back">{{ operation }}</li>
+    <li class="breadcrumb-back">{% trans 'permits' %}</li>
+{% endblock %}
+{% block content %}
+    <div class="header-links">
+        <a href="{% url 'Core:permit-add' package_id=package.pk program_id=program.pk menu_id=menu.pk operation_id=operation.pk %}">{% trans 'add' %}</a>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th width="5%">&nbsp;</th>
+            <th style="width: 20%; text-align: right;">{% trans 'permit' %}</th>
+            <th style="width: 20%; text-align: right;">{% trans 'code' %}</th>
+            <th style="width: 25%; text-align: center;">{% trans 'settings' %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for permit in operation.permits.all %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td align="right">{{ permit }}</td>
+                <td align="right">{{ permit.code }}</td>
+                <td align="center">
+                    <a href="{% url 'Core:permit-edit' package_id=package.pk program_id=program.pk menu_id=menu.pk operation_id=operation.pk id=permit.pk %}">{% trans 'edit' %}</a>
+                    &nbsp;
+                    <a href="{% url 'Core:permit-confirm' package_id=package.pk program_id=program.pk menu_id=menu.pk operation_id=operation.pk id=permit.pk %}" data-toggle='modal' data-target='#modal' >{% trans 'delete' %}</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

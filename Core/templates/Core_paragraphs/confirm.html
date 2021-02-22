@@ -1,0 +1,11 @@
+{% extends "base/header/modal_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block modal-header %}{% trans 'delete' %}{% endblock %}
+{% block modal-body %}
+<section class="delete">
+    <p>{{ paragraph }}</p>
+    <a href="{% url 'Core:paragraph-destroy' paragraph_id=paragraph.pk %}" class="btn btn-danger submit-link">{% trans 'confirm' %}</a>
+</section>
+{% endblock %}
+{% block modal-footer %}{% endblock %}

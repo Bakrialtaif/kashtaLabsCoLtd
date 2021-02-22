@@ -1,0 +1,141 @@
+{% load static %}
+{% load i18n %}
+
+<!doctype html>
+<html class="no-js" lang="zxx" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>{% trans 'home' %}</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="{% static 'theme/website/images/apple-touch-icon.png' %}">
+    <link rel="shortcut icon" type="image/ico" href="{% static 'theme/website/images/logo.svg' %}" />
+    <!-- Plugin-CSS -->
+    <link rel="stylesheet" href="{% static 'theme/website/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/website/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/website/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/website/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/website/css/animate.css' %}">
+    <!-- Main-Stylesheets -->
+    <link rel="stylesheet" href="{% static 'theme/website/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/website/rtl-style.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/website/css/responsive.css' %}">
+    <script src="{% static 'theme/website/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js' %}"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js' %}"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#primary-menu" >
+{% comment %} class="overlay" {% endcomment %}
+
+    {% block content %}
+    {% endblock %}   
+
+
+{% comment %} 
+    <footer class="footer-area relative sky-bg" id="contact-page">
+        <div class="absolute footer-bg"></div>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                        <div class="page-title">
+                            <h2>{% trans 'contact with us' %}</h2>
+                            <p>{% trans 'contact with us intro' %}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <address class="side-icon-boxes">
+                            <div class="side-icon-box">
+                                <div class="side-icon">
+                                    <img src="{% static 'theme/website/images/location-arrow.png' %}" alt="">
+                                </div>
+                                <p><strong>{% trans 'address' %}: </strong> {% trans 'address details '%} <br />{% trans 'sudan' %}</p>
+                            </div>
+                            <div class="side-icon-box">
+                                <div class="side-icon">
+                                    <img src="{% static 'theme/website/images/phone-arrow.png' %}" alt="">
+                                </div>
+                                <p><strong>{% trans 'telephone' %}: </strong>
+                                    <a href="callto:8801812726495">+8801812726495</a> <br />
+                                    <a href="callto:8801687420471">+8801687420471</a>
+                                </p>
+                            </div>
+                            <div class="side-icon-box">
+                                <div class="side-icon">
+                                    <img src="{% static 'theme/website/images/mail-arrow.png' %}" alt="">
+                                </div>
+                                <p><strong>E-mail: </strong>
+                                    <a href="mailto:youremail@example.com">{{ request.organization.email}}</a> <br />
+                                </p>
+                            </div>
+                        </address>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-12 pull-right">
+                            <ul class="social-menu text-right x-left">
+                                <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                <li><a href="#"><i class="ti-twitter"></i></a></li>
+                                <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-12">
+                            <p>{% trans 'footer more info' %}</p>
+                        </div>
+                    </div>
+                        <form action="process.php" id="contact-form" method="post" class="contact-form">
+                            <div class="form-double">
+                                <input type="text" id="form-name" name="form-name" placeholder="Your name" class="form-control" required="required">
+                                <input type="email" id="form-email" name="form-email" class="form-control" placeholder="E-mail address" required="required">
+                            </div>
+                            <input type="text" id="form-subject" name="form-subject" class="form-control" placeholder="Message topic">
+                            <textarea name="message" id="form-message" name="form-message" rows="5" class="form-control" placeholder="Your message" required="required"></textarea>
+                            <button type="sibmit" class="button">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <p>&copy;{% trans 'all right resurved.' %}&nbsp; <script>document.write( new Date().getFullYear() );</script> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% endcomment %}
+
+
+
+
+
+    <!--Vendor-JS-->
+    <script src="{% static 'theme/website/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'theme/website/js/vendor/bootstrap.min.js' %}"></script>
+    <!--Plugin-JS-->
+    <script src="{% static 'theme/website/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'theme/website/js/contact-form.js' %}"></script>
+    <script src="{% static 'theme/website/js/jquery.parallax-1.1.3.js' %}"></script>
+    <script src="{% static 'theme/website/js/scrollUp.min.js' %}"></script>
+    <script src="{% static 'theme/website/js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'theme/website/js/wow.min.js' %}"></script>
+    <!--Main-active-JS-->
+    <script src="{% static 'theme/website/js/main.js' %}"></script>
+</body>
+
+</html>

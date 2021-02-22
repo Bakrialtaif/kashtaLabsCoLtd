@@ -1,0 +1,24 @@
+{% load static %}
+{% load i18n %}
+{% load workflow_tags %}
+<div class="well">
+    <h3>
+        {% trans requestObject.status %}
+        &nbsp;
+        <span class="hint">
+            [&nbsp;{{ requestObject.action }}&nbsp;]
+        </span>
+    </h3>
+    <table class="table">
+        <tr>
+            <td align="{{ LANGUAGE_END }}" width="25%">{% trans 'request status' %}</td>
+            <td align="{{ LANGUAGE_START }}" width="75%">
+                {% SendRequestLink requestObject=requestObject %}
+                <br />
+                {% request request=requestObject %}
+                <br />
+                {% CancelRequestLink requestObject=requestObject %}
+            </td>
+        </tr>
+    </table>
+</div>

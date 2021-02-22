@@ -1,0 +1,66 @@
+{% load static %}
+{% load i18n %}
+
+{% comment %} <section class="home-footer">
+    <div class="row flayer">
+        <div class="col-lg-12">
+            <div class="row slogan">
+                <div class="col-lg-10">
+                    <span class="slogan-name">{% trans 'slogan name'%}</span>
+                    <p class="slogan-about">{% trans 'slogan about' %}</p>
+                </div>
+                <div class="col-lg-2">
+                    <img src="{% static 'theme/icons/together.svg' %}" class="img-responsive together">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+
+                <div class="col-lg-6 col-xs-12 about-company">
+                  <h2>{% trans 'bladalnoor name' %}</h2>
+                    <p class="pr-5 text-white-50">
+                        <img src="{% static 'theme/images/logo.png' %}" class='img-logo' style="width: 75px; float: right; margin-left: 10px;">
+                        {% trans 'bladalnoor about' %}
+                    </p>
+                    <p>
+                        <a href="#"><i class="fa fa-facebook-square mr-1"></i></a>&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-linkedin-square"></i></a>
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-xs-12 about-company"></div>
+
+                <div class="col-lg-2 col-xs-12 important-links">
+                    <h2 class="mt-lg-0 mt-sm-4">{% trans 'important links' %}</h4>
+                    <p><i class="fa fa-fas fa-database"></i>&nbsp;<a href="{% url 'presentation:home' %}">{% trans 'system data prensentation' %}</a></p>
+                    <p><i class="fa fa-fas fa-database"></i>&nbsp;<a href="{% url 'presentation:business-model' %}">{% trans 'business model prensentation' %}</a></p>
+                    <p><i class="fa fa-fas fa-database"></i>&nbsp;<a href="{% url 'presentation:business-model' %}">{% trans 'development methodologies prensentation' %}</a></p>
+                </div>
+
+                <div class="col-lg-2 col-xs-12 location">
+                  <h2 class="mt-lg-0 mt-sm-4">{% trans 'contact data' %}</h4>
+                  <p><i class="fa fa-location-arrow"></i>&nbsp;{% trans 'bladalnoor title' %}</p>
+                  <p><i class="fa fa-phone mr-3">&nbsp;</i>{% trans 'bladalnoor phone' %}</p>
+                  <p><i class="fa fa-envelope-o mr-3"></i>&nbsp;{% trans 'bladalnoor email' %}</p>
+                </div>
+
+              </div>
+              <div class="row mt-5">
+                <div class="col copyright text-center">
+                    <p class="">
+                        <small class="text-white-50">
+                            {% trans 'copyright message' %}
+                            <script type="text/javascript">
+                                document.write(new Date().getFullYear());
+                            </script>
+                            &copy;
+                        </small>
+                    </p>
+                </div>
+              </div>
+        </div>
+    </div>
+</section> {% endcomment %}

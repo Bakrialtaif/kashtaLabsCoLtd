@@ -1,0 +1,7 @@
+_('Monday')
+_('Tuesday')
+_('Wednesday')
+_('Thursday')
+_('Friday')
+_('Saturday')
+_('Sunday')

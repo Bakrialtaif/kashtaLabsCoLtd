@@ -1,0 +1,37 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load general_tags %}
+{% load presentation_tags %}
+{% block page_title %}{% trans 'procedure dashboard' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:procedure-list' %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{{ object.package }}</li>
+    <li class="breadcrumb-back">{{ object.program }}</li>
+    <li class="breadcrumb-back">{{ object.menu }}</li>
+    <li class="breadcrumb-back">{{ object.operation }}</li>
+    <li class="breadcrumb-back">{{ object.procedure }}</li>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="well">
+                <h3><i class="fa fa-fas fa-cogs"></i>&nbsp;{{ object.name }}</h3>
+                <span class="hint">{{ object.code }}</span>
+            </div>
+            <div class="well">
+                {% with cat_slug=object.code|add:"_description" %}
+                    <p>{% trans cat_slug %}</p>
+                {% endwith %}
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="well" style="direction: ltr; text-align: center">
+                <div id="chartContainer"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+    {% ComponentDiagram component_id=object.procedure.component.parent.parent.parent.parent.pk current_id=object.procedure.component.parent.parent.pk containerId='chartContainer' procedure_id=object.procedure.pk specific_node_tree=object.procedure.component %}
+{% endblock %}

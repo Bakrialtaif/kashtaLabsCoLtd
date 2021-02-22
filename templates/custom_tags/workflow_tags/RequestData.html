@@ -1,0 +1,23 @@
+{% load static %}
+{% load i18n %}
+{% load general_tags %}
+
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#request" data-toggle="tab">{{ requestObject.get_model }}</a></li>
+    <li><a href="#extra" data-toggle="tab">{% trans 'extra data' %}</a></li>
+    <li><a href="#diagram" data-toggle="tab">{% trans 'diagram' %}</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div class="tab-pane fade in active" id="request">
+        {% BrowseModelData modelObject=requestObject.get_object %}
+    </div>
+    <div class="tab-pane fade" id="extra">
+        {% BrowseModelData modelObject=requestObject %}
+    </div>
+    <div class="tab-pane fade" id="diagram">
+        <div id="chart-container"></div>
+    </div>
+</div>
+

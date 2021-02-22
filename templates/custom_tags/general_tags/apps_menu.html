@@ -1,0 +1,24 @@
+{% load static %}
+{% load i18n %}
+{% load general_tags %}
+
+{% if request.user.is_superuser %}
+    <li>
+        <a href="{% url 'Core:home'%}" {% if request.resolver_match.app_name == 'Core' %} class="active" {% endif %}>
+        <i class="fa fa-far fa-sun"></i>&nbsp;
+        {% trans 'Core' %}
+        </a>
+    </li>
+{% endif %}
+
+    <li>
+        <a href="{% url 'P001:home'%}" {% if request.resolver_match.app_name == 'P001' %} class="active" {% endif %}><i class="fa fa-far fa-sun"></i>&nbsp;{% trans 'P001' %}<span class="fa arrow"></span></a>
+    </li>
+
+{% for program in programs %}
+    {% if program.name in request.organization.get_programs %}
+        <li>
+            <a href="{{ program.get_reverse }}" {% if program.name == request.resolver_match.app_name %} class="active" {% endif %}><i class="fa fa-far fa-sun"></i>&nbsp;{% trans program.name %}<span class="fa arrow"></span></a>
+        </li>
+    {% endif %}
+{% endfor %}

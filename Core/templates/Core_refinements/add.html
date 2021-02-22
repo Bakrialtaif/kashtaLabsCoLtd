@@ -1,0 +1,19 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block page_title %}{% trans 'add' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:refinements' component_id=component.pk %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'add'%}</li>
+{% endblock %}
+{% block content %}
+<section class="add">
+    <form action="{% url 'Core:refinement-insert' component_id=component.pk %}" method="POST" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table">
+        {{ form.as_table }}
+        </table>
+        <button type="submit" class="btn btn-success">{% trans 'save' %}</button>
+    </form>
+</section>
+{% endblock %}

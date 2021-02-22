@@ -1,0 +1,12 @@
+{% load i18n %}
+{% load static %}
+
+<li style="background-color: #f2f2f2;">&nbsp;</li>
+{% for package in packages %}
+    <li>
+        <a href="{% url 'Presentation:package' package_id=package.pk %}">
+            <i class="fa fa-fas fa-border-all"></i>&nbsp;{{ package }}
+        </a>
+    </li>
+{% endfor %}
+<li style="background-color: #f2f2f2;">&nbsp;</li>

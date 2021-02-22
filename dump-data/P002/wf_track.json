@@ -1,0 +1,26 @@
+[
+{
+    "model": "P002.wf_track",
+    "pk": 25,
+    "fields": {
+        "action": 1036,
+        "input": 55,
+        "name": "man",
+        "value": "\u0631\u062c\u0644",
+        "redirect_to": 1040,
+        "order": 0
+    }
+},
+{
+    "model": "P002.wf_track",
+    "pk": 26,
+    "fields": {
+        "action": 1036,
+        "input": 55,
+        "name": "women",
+        "value": "\u0645\u0631\u0623\u0629",
+        "redirect_to": 1038,
+        "order": 0
+    }
+}
+]

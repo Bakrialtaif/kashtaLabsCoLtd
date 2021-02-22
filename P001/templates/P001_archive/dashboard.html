@@ -1,0 +1,33 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load archive_tags %}
+{% block page_title %}{% trans 'managerial communications' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'P001:home'%}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'P001' %}</li>
+    <li class="breadcrumb-back">{% trans 'managerial communications' %}</li>
+{% endblock %}
+{% block content %}
+<section class="add">
+
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-10">
+            <div class="header-links">
+                <a href="{% url 'P001:archive-folders' %}" class="general-link">
+                    <i class="fa fa-far fa-folder-open" aria-hidden="true"></i>&nbsp;{% trans 'employee archive folders settings' %}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            {% employee_folders_menu %}
+        </div>
+        <div class="col-lg-10">
+
+        </div>
+    </div>
+</section>
+{% endblock %}

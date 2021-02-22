@@ -1,0 +1,49 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load presentation_tags %}
+{% block page_title %}{% trans 'home' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:home' %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'paragraphs' %}</li>
+{% endblock %}
+{% block content %}
+<div class="header-links">
+    <a href="{% url 'Core:paragraph-add' %}">{% trans 'add' %}</a>
+</div>
+
+    {% regroup paragraphs by type as paragraphsList %}
+    {% for paragraphObject in paragraphsList%}
+        <div class="well">
+            <h3 class="title">{% trans paragraphObject.grouper %} </h3>
+            <table class="table table-hover">
+                <thead>
+                    <th style="width:2%; text-align: center">&nbsp;</th>
+                    <th style="width:5%; text-align: center">{% trans 'logo' %}</th>
+                    <th style="width:17%; text-align: right">{% trans 'title' %}</th>
+                    <th style="width:60%; text-align: right">{% trans 'body' %}</th>
+                    <th style="width:15%; text-align: center">{% trans 'settings' %}</th>
+                </thead>
+                <tbody>
+                    {% for paragraph in paragraphObject.list %}
+                    <tr>
+                        <td align="center">{{ paragraph.order }}</td>
+                        <td align="center">
+                            {% comment %} <a href="{% url 'Core:documents-prepare' ownership='organization' app_label='Core' content_type='paragraph' object_id=paragraph.pk %}" class="general-link">
+                                <i class="fa fa-fas fa-paperclip" aria-hidden="true"></i>&nbsp;{% trans 'logo' %}
+                            </a> {% endcomment %}
+                        </td>
+                        <td>{{ paragraph.title }}</td>
+                        <td><span class="hint">{{ paragraph.body }}</span></td>
+                        <td align="center">
+                            <a href="{% url 'Core:paragraph-edit' paragraph_id=paragraph.pk %}">{% trans 'edit' %}</a>
+                            &nbsp;
+                            <a href="{% url 'Core:paragraph-confirm' paragraph_id=paragraph.pk %}" data-toggle='modal' data-target='#modal' >{% trans 'delete' %}</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endfor %}
+{% endblock %}

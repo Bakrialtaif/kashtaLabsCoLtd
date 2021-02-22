@@ -1,0 +1,11 @@
+{% extends "base/header/modal_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block modal-header %}{% trans 'delete' %}{% endblock %}
+{% block modal-body %}
+<section class="delete">
+    <p>{{ document }}</p>
+    <a href="{% url 'Core:document-destroy' model_class=model_class model_id=model_id component_name=component_name document_id=document.pk back_url=back_url back_type=back_type %}" class="btn btn-danger submit-link">{% trans 'confirm' %}</a>
+</section>
+{% endblock %}
+{% block modal-footer %}{% endblock %}

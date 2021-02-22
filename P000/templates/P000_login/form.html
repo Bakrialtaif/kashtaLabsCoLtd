@@ -1,0 +1,18 @@
+{% extends "base/header/login_header.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block page_title %}{% trans 'home' %}{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-lg-6 col-offset-3 centered">
+  <form action="{% url 'P000:login-request' %}" method="post" class="website-home">
+    {% csrf_token %}
+    <div class="form-group"><input type="text" name="username" id="email" class="form-control" placeholder="{% trans 'username' %}"></div>
+    <div class="form-group"><input type="password" name="password" id="password" class="form-control" placeholder="{% trans 'password' %}"></div>
+    <div class="form-group"><button class="btn btn-info">{% trans 'login' %}</button></div>
+  </form>
+  </div>
+</div>
+{% endblock %}

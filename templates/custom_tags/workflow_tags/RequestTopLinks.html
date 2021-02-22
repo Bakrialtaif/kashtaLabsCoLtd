@@ -1,0 +1,10 @@
+{% load i18n %}
+{% load static %}
+
+{% if component.active_chart_status %}
+    <a href="{% url url %}" {% if modal %} data-toggle='modal' data-target='#modal'  {% endif %} class="general-link">
+        <i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;{% trans 'add' %}
+    </a>
+{% else %}
+    {% trans 'you should build operation chart first' %}
+{% endif %}

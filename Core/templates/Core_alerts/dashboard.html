@@ -1,0 +1,55 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load general_tags %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{{ back_url_path }}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'alerts' %}</li>
+{% endblock %}
+{% block content %}
+<section class="alerts">
+    <div class="row">
+        <div class="col-lg-2">
+            {% alerts_specifications back_url=back_url %}
+        </div>
+        <div class="col-lg-10">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td width="5%"></td>
+                        <td width="35%" style="text-align: {{ LANGUAGE_START }};">{% trans 'alert' %}</td>
+                        <td width="15%" style="text-align: {{ LANGUAGE_START }};">{% trans 'created_by' %}</td>
+                        <td width="15%" style="text-align: center;">{% trans 'sent_at' %}</td>
+                        <td width="10%" style="text-align: center;">{% trans 'open' %}</td>
+                        <td width="20%" style="text-align: center;">{% trans 'set as not visited' %}</td>
+                    </tr>
+                </thead>
+                {% for alert in alerts %}
+                    <tr>
+                        <td align="center">{{ forloop.counter }}</td>
+                        <td>{{ alert|safe }}</td>
+                        <td>{{ alert.created_by.get_full_name }}</td>
+                        <td align="center">{{ alert.created_at }}</td>
+                        <td align="center">
+                            <a href="{% url 'Core:alert-redirection' alert_id=alert.pk %}">
+                                {% if alert.status == sent %}
+                                    <span style="color: red;"><i class="fa fa-fas fa-bell"></i>&nbsp;{% trans 'open' %}</span>
+                                {% else %}
+                                    <span style="color: grey;"><i class="fa fa-fas fa-bell"></i>&nbsp;{% trans 'open' %}</span>
+                                {% endif %}
+                            </a>
+                        </td>
+                        <td align="center">
+                            {% if alert.status == visited%}
+                                <a href="{% url 'Core:alert-set-as-not-visited' alert_id=alert.pk back_url=back_url %}">
+                                    {% trans 'set as not visited' %}
+                                </a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

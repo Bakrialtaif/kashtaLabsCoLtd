@@ -1,0 +1,15 @@
+[
+{
+    "model": "P001.profile",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "title": "",
+        "birthdate": null,
+        "phone": "",
+        "facebook": "",
+        "twitter": "",
+        "task_specifications": ""
+    }
+}
+]

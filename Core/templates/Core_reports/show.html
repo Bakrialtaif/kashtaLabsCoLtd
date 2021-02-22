@@ -1,0 +1,42 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load reports_tags %}
+{% block page_title %}{% trans 'tasks dashboard' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:home'%}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'Core' %}</li>
+    <li class="breadcrumb-back">{% trans 'reports' %}</li>
+{% endblock %}
+{% block content %}
+    <section class="reports">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td width="5%">&nbsp;</td>
+                    <td width="20%" style="text-align: right;">{% trans 'dimension' %}</td>
+                    <td width="20%" style="text-align: right;">{% trans 'settings' %}</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dimension in dimensions %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ dimension }}</td>
+                        <td>
+                            <a href="{% url 'Core:reports-dimension-context' dimension_id=dimension.pk %}">
+                                {% trans 'context setting' %}&nbsp;[&nbsp;{{ dimension.children.count }}&nbsp;]
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    <div class="col-lg-12" style="direction: ltr; text-align: center">
+        <div id="chartContainer"></div>
+    </div>
+{% endblock %}
+{% block footer %}
+    {% ReportElementsDiagram element_id=first_element.pk current_id=first_element.pk containerId='chartContainer' %}
+{% endblock %}

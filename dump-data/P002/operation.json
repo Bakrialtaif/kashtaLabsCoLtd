@@ -1,0 +1,522 @@
+[
+{
+    "model": "P002.operation",
+    "pk": 1,
+    "fields": {
+        "content_type": 1,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 2,
+    "fields": {
+        "content_type": 2,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 3,
+    "fields": {
+        "content_type": 3,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 4,
+    "fields": {
+        "content_type": 4,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 5,
+    "fields": {
+        "content_type": 5,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 6,
+    "fields": {
+        "content_type": 6,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 7,
+    "fields": {
+        "content_type": 7,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": true,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 8,
+    "fields": {
+        "content_type": 8,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 9,
+    "fields": {
+        "content_type": 9,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 10,
+    "fields": {
+        "content_type": 10,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 11,
+    "fields": {
+        "content_type": 11,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 12,
+    "fields": {
+        "content_type": 12,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 13,
+    "fields": {
+        "content_type": 13,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": true,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 14,
+    "fields": {
+        "content_type": 14,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 15,
+    "fields": {
+        "content_type": 15,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 16,
+    "fields": {
+        "content_type": 16,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 17,
+    "fields": {
+        "content_type": 17,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 18,
+    "fields": {
+        "content_type": 18,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 19,
+    "fields": {
+        "content_type": 19,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 20,
+    "fields": {
+        "content_type": 20,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 21,
+    "fields": {
+        "content_type": 21,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 22,
+    "fields": {
+        "content_type": 22,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": true,
+        "permitted_doc_no": 10,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 23,
+    "fields": {
+        "content_type": 23,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 24,
+    "fields": {
+        "content_type": 24,
+        "support_workflow": true,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 25,
+    "fields": {
+        "content_type": 25,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 26,
+    "fields": {
+        "content_type": 26,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 27,
+    "fields": {
+        "content_type": 27,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 28,
+    "fields": {
+        "content_type": 28,
+        "support_workflow": true,
+        "support_privileges": false,
+        "selected_chart": 51,
+        "support_documents": true,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 29,
+    "fields": {
+        "content_type": 29,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 30,
+    "fields": {
+        "content_type": 30,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 31,
+    "fields": {
+        "content_type": 31,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 32,
+    "fields": {
+        "content_type": 32,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 33,
+    "fields": {
+        "content_type": 33,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 34,
+    "fields": {
+        "content_type": 34,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 35,
+    "fields": {
+        "content_type": 35,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 36,
+    "fields": {
+        "content_type": 36,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 41,
+    "fields": {
+        "content_type": 37,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 42,
+    "fields": {
+        "content_type": 38,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 47,
+    "fields": {
+        "content_type": 39,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "P002.operation",
+    "pk": 48,
+    "fields": {
+        "content_type": 40,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+}
+]

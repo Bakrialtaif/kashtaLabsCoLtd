@@ -1,0 +1,45 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load general_tags %}
+{% block page_title %}{% trans 'my data' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'P001:home'%}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'P001' %}</li>
+    <li class="breadcrumb-back">{{ user.get_full_name }}</li>
+    <li class="breadcrumb-back">{% trans 'my documents' %}</li>
+{% endblock %}
+{% block content %}
+<section class="P001">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr role="row">
+                <th style="width: 5%;"></th>
+                <th style="width: 15%; text-align: {{ LANGUAGE_END }};">{% trans 'size' %}</th>
+                <th style="width: 40%; text-align: {{ LANGUAGE_START }};">{% trans 'name' %}</th>
+                <th style="width: 15%; text-align: {{ LANGUAGE_START }};">{% trans 'classification' %}</th>
+                <th style="width: 15%;">{% trans 'open' %}&nbsp;/&nbsp;{% trans 'download' %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for document in documents%}
+            <tr role="row" class="odd">
+                <td style="text-align: center;">{{ forloop.counter }}</td>
+                <td style="text-align: {{ LANGUAGE_END }};">{{ document.file.size|sizify }}</td>
+                <td>{{ document }}</td>
+                <td>{{ document.component }}</td>
+                <td align="center">
+                    <a href="{{ document.file.url }}" download class="general-link">
+                        <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;{% trans 'download' %}
+                    </a>                        
+                    &nbsp;&nbsp;
+                    <a href="{{ document.file.url }}" target="_blank" class="general-link">
+                        <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;{% trans 'open' %}
+                    </a>                        
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

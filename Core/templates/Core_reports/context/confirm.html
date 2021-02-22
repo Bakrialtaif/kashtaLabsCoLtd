@@ -1,0 +1,13 @@
+{% extends "base/header/modal_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block modal-header %}{% trans 'delete' %}{% endblock %}
+{% block modal-body %}
+<section class="delete">
+    <p>{{ dimention }}</p>
+    <p>{{ context }}</p>
+    <p>{{ case }}</p>
+    <a href="{% url 'Core:reports-dimension-context-destroy' dimension_id=dimension.pk context_id=context.pk %}" class="btn btn-danger submit-link">{% trans 'confirm' %}</a>
+</section>
+{% endblock %}
+{% block modal-footer %}{% endblock %}

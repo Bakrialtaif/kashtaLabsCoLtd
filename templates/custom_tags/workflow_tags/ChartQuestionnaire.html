@@ -1,0 +1,41 @@
+{% load static %}
+{% load i18n %}
+
+<table class="table table-hover table-striped table-bordered" style="width: 100%;" role="grid" aria-describedby="mydata">
+    <thead>
+        <tr role="row">
+            <th style="width: 5%;">&nbsp;</th>
+            <th style="width: 15%; text-align: right;">{% trans 'the action' %}</th>
+            <th style="width: 20%; text-align: right;">{% trans 'the executor' %}</th>
+            <th style="width: 40%;">{% trans 'data form' %}</th>
+            <th style="width: 20%;">{% trans 'success condition' %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    {% for action, form in form_list.items %}
+        <tr role="row" class="odd">
+            <td style="text-align: center;">{{ forloop.counter }}</td>
+            <td style="text-align: right;">{{ action.name }}</td>
+            <td style="text-align: right;">
+                {% trans action.executor_type %}<br>
+                {% if action.executor.get_full_name %}<span class="hint">({{ action.executor.get_full_name }})</span>{% endif %}
+            </td>
+            <td style="text-align: right;">
+                <table class="table" style="text-align: right;">
+                    <tr>
+                        <td width="25%"></td>
+                        <td width="75%"></td>
+                    </tr>
+                    {{ form.as_table }}
+                </table>
+            </td>
+            <td style="text-align: right;">
+                {% if action.success_input and action.success_track %}
+                    {{ action.success_input }}&nbsp;&raquo;&nbsp;{{ action.success_track }}
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

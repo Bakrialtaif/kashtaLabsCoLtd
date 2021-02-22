@@ -1,0 +1,91 @@
+{% load i18n %}
+{% load static %}
+{% if criterion.type in criteria_types.form_type_1 %}
+    <table class="table">
+        <tr>
+            <td width="10%">{% trans 'type' %}</td>
+            <td width="90%">
+                <div class="form-group">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="{{ criterion.pk }}" value="{{ operand.GREATER_THAN }}" checked="">{% trans operand.GREATER_THAN %}
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="{{ criterion.pk }}" value="{{ operand.SMALLER_THAN }}">{% trans operand.SMALLER_THAN %}
+                        </label>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>{% trans 'value' %}</td>
+            <td>
+                <div class="form-group">
+                    <input type="number" class="form-control">
+                </div>
+            </td>
+        </tr>
+    </table>
+{% endif %}
+{% if criterion.type in criteria_types.form_type_2 %}
+    <table class="table">
+        <tr>
+            <td width="10%">{% trans 'type' %}</td>
+            <td width="90%">
+                <div class="form-group">
+                    {% if criterion.type == 'INDIVIDUAL_FILTER_SEX' %} 
+                        {% for item, value in list_of_sex_types %}
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="{{ item }}">{{ value }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if criterion.type == 'INDIVIDUAL_FILTER_EDUCATION' %} 
+                        {% for item, value in list_of_education_status %}
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="{{ item }}">{{ value }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if criterion.type == 'INDIVIDUAL_FILTER_HEALTH' %} 
+                        {% for item, value in list_of_health_status %}
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="{{ item }}">{{ value }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if criterion.type == 'INDIVIDUAL_FILTER_WORK' %} 
+                        {% for item, value in list_of_work_status %}
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="{{ item }}">{{ value }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if criterion.type == 'INDIVIDUAL_FILTER_MARTIAL' %} 
+                        {% for item, value in list_of_martial_status %}
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="{{ item }}">{{ value }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </td>
+        </tr>
+    </table>
+{% endif %}

@@ -1,0 +1,46 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load reports_tags %}
+{% block page_title %}{% trans 'tasks dashboard' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:reports-dimension-context-case-facts' dimension_id=fact.element.parent.parent.pk context_id=fact.element.parent.pk case_id=fact.element.pk %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'Core' %}</li>
+    <li class="breadcrumb-back">{% trans 'reports' %}</li>
+    <li class="breadcrumb-back">{{ fact.element.parent.parent }}</li>
+    <li class="breadcrumb-back">{{ fact.element.parent }}</li>
+    <li class="breadcrumb-back">{{ fact.element }}</li>
+    <li class="breadcrumb-back">{{ fact }}</li>
+{% endblock %}
+{% block content %}
+    <section class="reports">
+        <div class="header-links">
+            <a href="{% url 'Core:fact-datum-add' fact_id=fact.pk %}">
+                {% trans 'add' %}
+            </a>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td width="5%">&nbsp;</td>
+                    <td width="80%" style="text-align: right;">{% trans 'name' %}</td>
+                    <td width="15%">{% trans 'settings' %}</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for datum in fact.datums.all %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ datum }}</td>
+                        <td align="center">
+                            <a href="{% url 'Core:fact-datum-edit' fact_id=fact.pk datum_id=datum.pk %}">{% trans 'edit' %}</a>
+                            &nbsp;
+                            <a href="{% url 'Core:fact-datum-confirm' fact_id=fact.pk datum_id=datum.pk %}" data-toggle='modal' data-target='#modal' >{% trans 'delete' %}</a>
+                            &nbsp;
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

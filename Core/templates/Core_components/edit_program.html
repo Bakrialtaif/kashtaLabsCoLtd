@@ -1,0 +1,22 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block page_title %}{% trans 'edit' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:components-home' %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'edit'%}</li>
+{% endblock %}
+{% block content %}
+<section class="edit">
+    <form action="{% url 'Core:program-update' package_id=package.pk program_id=program.pk %}" method="POST">
+        {% csrf_token %}
+        <table class="table">
+        {{ form.as_table }}
+        <tr>
+            <td></td>
+            <td><button type="submit" class="btn btn-warning">{% trans 'update' %}</button></td>
+        </tr>
+        </table>
+    </form>
+</section>
+{% endblock %}

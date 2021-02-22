@@ -1,0 +1,11 @@
+{% extends "base/header/modal_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block modal-header %}{% trans 'update' %}{% endblock %}
+{% block modal-body %}
+<section class="delete">
+    <p>{% trans 'load data from file to database confirmation message' %}</p>
+    <a href="{% url 'Core:load-db-update' %}" class="btn btn-warning submit-link">{% trans 'confirm' %}</a>
+</section>
+{% endblock %}
+{% block modal-footer %}{% endblock %}

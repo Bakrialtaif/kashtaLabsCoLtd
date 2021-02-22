@@ -1,0 +1,13 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load general_tags %}
+{% block page_title %}{% trans 'P001' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'P001:home' %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'P001' %}</li>
+    <li class="breadcrumb-back">{{ organization }}</li>
+    <li class="breadcrumb-back">{{ user.get_full_name }}</li>
+{% endblock %}
+{% block content %}
+{% endblock %}

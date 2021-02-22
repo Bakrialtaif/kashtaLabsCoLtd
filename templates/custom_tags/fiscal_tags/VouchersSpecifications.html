@@ -1,0 +1,13 @@
+{% load static %}
+{% load i18n %}
+
+    <form action="{% url 'P011:vouchers-specifications-update' %}" method="POST">
+        <table class="table">
+            {% csrf_token %}
+            {{ form.as_table }}
+            <tr>
+                <td width="40%"></td>
+                <td width="60%"><button type="submit" class="btn btn-warning">{% trans 'filtering' %}</button></td>
+            </tr>
+        </table>
+    </form>

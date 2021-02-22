@@ -1,0 +1,45 @@
+{% extends "base/header/system_header.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block page_title %}{% trans 'Core' %}{% endblock %}
+
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:home'%}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'Core' %}</li>
+    <li class="breadcrumb-back">{% trans 'home' %}</li>
+{% endblock %}
+
+{% block content %}
+    <section class="configuration">
+        <table class="table">
+            <tr>
+                <td width="5%">1</td>
+                <td width="20%">{% trans 'system preparation' %}</td>
+                <td width="75%">
+                    <a href="{% url 'Core:update-systemApps-confirmation' %}" data-toggle='modal' data-target='#modal' class="btn btn-sm sharp icon-only general-link">
+                        <i class="fa fa-fas fa-cog" aria-hidden="true"></i> {% trans 'update' %}
+                    </a>
+                </td>
+            </tr>
+            {% comment %} <tr>
+                <td>2</td>
+                <td>{% trans 'dump data to files' %}</td>
+                <td>
+                    <a href="{% url 'Core:dump-db-confirmation' %}" data-toggle='modal' data-target='#modal' class="btn btn-sm sharp icon-only general-link">
+                        <i class="fa fa-fas fa-cog" aria-hidden="true"></i> {% trans 'update' %}
+                    </a>
+                </td>
+            </tr> {% endcomment %}
+            {% comment %} <tr>
+                <td>3</td>
+                <td>{% trans 'prepare db ideoms to in translation file' %}</td>
+                <td>
+                    <a href="{% url 'Core:prepare-db-ideoms-to-in-translation-file' %}" data-toggle='modal' data-target='#modal' class="btn btn-sm sharp icon-only general-link">
+                        <i class="fa fa-fas fa-cog" aria-hidden="true"></i> {% trans 'update' %}
+                    </a>
+                </td>
+            </tr> {% endcomment %}
+        </table>
+    </section>
+{% endblock %}

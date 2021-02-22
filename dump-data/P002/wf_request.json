@@ -1,0 +1,20 @@
+[
+{
+    "model": "P002.wf_request",
+    "pk": 10,
+    "fields": {
+        "content": 28,
+        "chart": 51,
+        "user": 1,
+        "status": "UNDER_PROCESS",
+        "action": 977,
+        "success": false,
+        "created_by": 1,
+        "sended_by": 1,
+        "created_at": "2020-09-02T09:30:37.511Z",
+        "updated_at": "2020-09-02T19:26:59.470Z",
+        "sended_at": "2020-09-02T19:26:59.433Z",
+        "finish_at": "2020-09-02T09:33:02.411Z"
+    }
+}
+]

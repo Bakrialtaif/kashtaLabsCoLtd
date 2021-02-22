@@ -1,0 +1,130 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load presentation_tags %}
+{% block page_title %}{% trans 'home' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:components-home' %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans package.name %}</li>
+    <li class="breadcrumb-back">{% trans program.name %}</li>
+{% endblock %}
+{% block content %}
+    <div class="header-links">
+        <a href="{% url 'Core:menu-add' package_id=package.pk program_id=program.pk %}">{% trans 'add new menu' %}</a>
+    </div>
+    {% for menu in menus %}
+        <div class="well">
+            <div class="header-links">
+                <h3 clss="title">[&nbsp;{{ forloop.counter }}&nbsp;]&nbsp;{% trans menu.parent.parent.name %}&nbsp;&raquo;&nbsp;{% trans menu.parent.name %}&nbsp;&raquo;&nbsp;{% trans menu.name %}&nbsp;</h3>
+            </div>
+
+            <div class="header-links">
+                {% comment %} <a href="{% url 'Core:documents-prepare' ownership='organization' app_label='Core' content_type='component' object_id=menu.pk %}" class="general-link">
+                    <i class="fa fa-fas fa-paperclip" aria-hidden="true"></i>&nbsp;{% trans 'logo' %}
+                </a>
+                &nbsp; {% endcomment %}
+                <a href="{% url 'Core:menu-edit' package_id=package.pk program_id=program.pk menu_id=menu.pk %}">{% trans 'edit' %}</a>
+                &nbsp;
+                {% if menu.children.count == 0 %}
+                    <a href="{% url 'Core:menu-confirm' package_id=package.pk program_id=program.pk menu_id=menu.pk %}" data-toggle='modal' data-target='#modal' >{% trans 'delete' %}</a>
+                {% else %}
+                    <a href="#" class="un-active-link">{% trans 'delete' %}</a>
+                {% endif %}
+                &nbsp;
+                <a href="{% url 'Core:operation-add' package_id=package.pk program_id=program.pk menu_id=menu.pk %}">{% trans 'add' %}</a>
+            </div>
+
+            <table class="table table-hover">
+                <thead>
+                    <th style="width:5%; text-align: center">&nbsp;</th>
+                    <th style="width:25%; text-align: left">{% trans 'the url' %}</th>
+                    <th style="width:15%; text-align: right">{% trans 'the operation' %}</th>
+                    <th style="width:10%; text-align: center">{% trans 'parameters' %}</th>
+                    <th style="width:10%; text-align: center">{% trans 'permits' %}</th>
+                    <th style="width:10%; text-align: center">{% trans 'procedures' %}</th>
+                    <th style="width:15%; text-align: center">{% trans 'versions' %}</th>
+                    <th style="width:20%; text-align: center">{% trans 'settings' %}</th>
+                </thead>
+                <tbody>
+                    {% for operation in menu.children.all %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td align="left">&nbsp;[&nbsp;{{ operation.get_reverse|safe }}&nbsp;]</td>
+                        <td style="background-color: {{ operation.color }}; color: #ffffff;">
+                            {% if operation.show_in_menu %}
+                                <i class="fa fa-far fa-check-square hint" style="color: green;"></i>
+                            {% else %}
+                                <i class="fa fa-far fa-minus-square hint"></i>
+                            {% endif %}
+                            &nbsp;{{ operation.name }}<br />
+                            &nbsp;<span class="hint">{% trans operation.name %}</span>
+                        </td>
+                        <td align="center">
+                            <a href="{% url 'Core:parameters' package_id=package.pk program_id=program.pk menu_id=menu.pk operation_id=operation.pk %}" class="general-link">
+                                {% trans 'parameters' %}&nbsp;[&nbsp;{{ operation.parameters.count }}&nbsp;]
+                            </a>
+                        </td>
+                        <td align="center">
+                            <a href="{% url 'Core:permits' package_id=package.pk program_id=program.pk menu_id=menu.pk operation_id=operation.pk %}" class="general-link">
+                                {% trans 'permits' %}&nbsp;[&nbsp;{{ operation.permits.count }}&nbsp;]
+                            </a>
+                        </td>
+                        <td align="center">
+                            <a href="{% url 'Core:procedures' component_id=operation.pk %}" class="general-link">
+                                {% trans 'procedures' %}&nbsp;[&nbsp;{{ operation.procedures.count }}&nbsp;]
+                            </a>
+                        </td>
+                        <td align="center">
+                            <a href="{% url 'Core:refinements' component_id=operation.pk %}" class="general-link">
+                                {% trans 'version refinements' %}&nbsp;[&nbsp;{{ operation.refinements.count }}&nbsp;]
+                            </a>
+                        </td>
+                        <td align="center">
+                            {% comment %} <a href="{% url 'Core:documents-prepare' ownership='organization' app_label='Core' content_type='component' object_id=operation.pk %}" class="general-link">
+                                <i class="fa fa-fas fa-paperclip" aria-hidden="true"></i>&nbsp;{% trans 'logo' %}
+                            </a>
+                            &nbsp; {% endcomment %}
+                            <a href="{% url 'Core:operation-edit' package_id=package.pk program_id=program.pk menu_id=menu.pk operation_id=operation.pk %}">{% trans 'edit' %}</a>
+                            &nbsp;
+                            <a href="{% url 'Core:operation-confirm' package_id=package.pk program_id=program.pk menu_id=menu.pk operation_id=operation.pk %}" data-toggle='modal' data-target='#modal' >{% trans 'delete' %}</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endfor %}
+    <div class="header-links">
+        <a href="{% url 'Core:feature-add' package_id=package.pk program_id=program.pk %}">{% trans 'add new feature' %}</a>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th width="5%">&nbsp;</th>
+            <th style="width: 20%; text-align: right;">{% trans 'feature' %}</th>
+            <th style="width: 50%; text-align: right;">{% trans 'description' %}</th>
+            <th style="width: 25%; text-align: center;">{% trans 'settings' %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for feature in program.features.all %}
+            <tr>
+            <td>{{ forloop.counter }}</td>
+            <td align="right">{{ feature }}</td>
+            <td align="right">{{ feature.body }}</td>
+            <td align="center">
+                <a href="{% url 'Core:feature-edit' package_id=package.pk program_id=program.pk feature_id=feature.pk %}">{% trans 'edit' %}</a>
+                &nbsp;
+                <a href="{% url 'Core:feature-confirm' package_id=package.pk program_id=program.pk feature_id=feature.pk %}" data-toggle='modal' data-target='#modal' >{% trans 'delete' %}</a>
+            </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="row" style="direction: ltr; text-align: center">
+        <div id="chart-container"></div>
+    </div>
+{% endblock %}
+{% block footer %}
+    {% ComponentDiagram component_id=program.pk current_id=program.pk containerId='chart-container' %}
+{% endblock %}

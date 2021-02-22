@@ -1,0 +1,7 @@
+{% load static %}
+{% load i18n %}
+{% load general_tags %}
+
+<a href="{% url 'Core:document-confirm' model_class=object|class_name model_id=object.pk component_name=component_name document_id=document.pk back_url=back_url back_type='other' %}" data-toggle='modal' data-target='#modal' class="general-link">
+    <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;{% trans 'delete' %}
+</a>

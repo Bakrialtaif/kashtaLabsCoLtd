@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load static %}
+
+<table class="table table-striped table-bordered" style="width: 100%;" role="grid" aria-describedby="mydata">
+    <thead>
+        <tr role="row" class="odd">
+            <th width="5%" style="text-align: center;">&nbsp;</th>
+            <th width="70%" style="text-align: right;">{% trans 'the document' %}</th>
+            <th width="25%" align="center">{% trans 'settings' %}</th>
+        </tr>
+    </thead>
+    {% for document in transactionObject.documents.all %}
+        <tr role="row" class="odd">
+            <td style="text-align: center;">{{ forloop.counter }}</td>
+            <td>{{ document }}</td>
+            <td align="center">
+                <a href="/uploads/{{ document.file }}" download>{% trans 'download' %}</a>
+                &nbsp;&nbsp;
+                <a href="/uploads/{{ document.file }}" target="_blank">{% trans 'open' %}</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>

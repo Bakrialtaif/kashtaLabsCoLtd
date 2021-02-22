@@ -1,0 +1,594 @@
+[
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "sites",
+        "model": "site"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "account",
+        "model": "emailaddress"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "account",
+        "model": "emailconfirmation"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "socialaccount",
+        "model": "socialaccount"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "socialaccount",
+        "model": "socialapp"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "socialaccount",
+        "model": "socialtoken"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "Core",
+        "model": "alert"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "Core",
+        "model": "component"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+        "app_label": "Core",
+        "model": "datadimension"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+        "app_label": "Core",
+        "model": "document"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+        "app_label": "Core",
+        "model": "feature"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": {
+        "app_label": "Core",
+        "model": "operation"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": {
+        "app_label": "Core",
+        "model": "organization"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 20,
+    "fields": {
+        "app_label": "Core",
+        "model": "paragraph"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 21,
+    "fields": {
+        "app_label": "Core",
+        "model": "parameter"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 22,
+    "fields": {
+        "app_label": "Core",
+        "model": "permit"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 23,
+    "fields": {
+        "app_label": "Core",
+        "model": "sheet"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 24,
+    "fields": {
+        "app_label": "Core",
+        "model": "sheetparagraph"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 25,
+    "fields": {
+        "app_label": "Core",
+        "model": "task"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 26,
+    "fields": {
+        "app_label": "Core",
+        "model": "wf_action"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 27,
+    "fields": {
+        "app_label": "Core",
+        "model": "wf_chart"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 28,
+    "fields": {
+        "app_label": "Core",
+        "model": "wf_dump"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 29,
+    "fields": {
+        "app_label": "Core",
+        "model": "wf_input"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 30,
+    "fields": {
+        "app_label": "Core",
+        "model": "wf_track"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 31,
+    "fields": {
+        "app_label": "Core",
+        "model": "wf_request"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 32,
+    "fields": {
+        "app_label": "Core",
+        "model": "wf_data"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 33,
+    "fields": {
+        "app_label": "P001",
+        "model": "profile"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 34,
+    "fields": {
+        "app_label": "P001",
+        "model": "education"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 35,
+    "fields": {
+        "app_label": "P002",
+        "model": "building"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 36,
+    "fields": {
+        "app_label": "P002",
+        "model": "permissionabs"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 37,
+    "fields": {
+        "app_label": "P002",
+        "model": "privilege"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 38,
+    "fields": {
+        "app_label": "P002",
+        "model": "quote"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 39,
+    "fields": {
+        "app_label": "P002",
+        "model": "state"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 40,
+    "fields": {
+        "app_label": "P002",
+        "model": "userabs"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 41,
+    "fields": {
+        "app_label": "P002",
+        "model": "locality"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 42,
+    "fields": {
+        "app_label": "P002",
+        "model": "district"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 43,
+    "fields": {
+        "app_label": "P003",
+        "model": "card"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 44,
+    "fields": {
+        "app_label": "P003",
+        "model": "unit"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 45,
+    "fields": {
+        "app_label": "P003",
+        "model": "vacant"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 46,
+    "fields": {
+        "app_label": "P003",
+        "model": "responsibility"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 47,
+    "fields": {
+        "app_label": "P003",
+        "model": "duty"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 48,
+    "fields": {
+        "app_label": "P003",
+        "model": "cardresponsibility"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 49,
+    "fields": {
+        "app_label": "P003",
+        "model": "cardduty"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 50,
+    "fields": {
+        "app_label": "P004",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 51,
+    "fields": {
+        "app_label": "P004",
+        "model": "dismissal"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 52,
+    "fields": {
+        "app_label": "P005",
+        "model": "folder"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 53,
+    "fields": {
+        "app_label": "P005",
+        "model": "tag"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 54,
+    "fields": {
+        "app_label": "P005",
+        "model": "transaction"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 55,
+    "fields": {
+        "app_label": "P005",
+        "model": "transtag"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 56,
+    "fields": {
+        "app_label": "P005",
+        "model": "referral"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 57,
+    "fields": {
+        "app_label": "P006",
+        "model": "assettype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 58,
+    "fields": {
+        "app_label": "P006",
+        "model": "assetsubtype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 59,
+    "fields": {
+        "app_label": "P006",
+        "model": "asset"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 60,
+    "fields": {
+        "app_label": "P011",
+        "model": "account"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 61,
+    "fields": {
+        "app_label": "P011",
+        "model": "chartofaccounts"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 62,
+    "fields": {
+        "app_label": "P011",
+        "model": "chartofcostcenters"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 63,
+    "fields": {
+        "app_label": "P011",
+        "model": "costcenter"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 64,
+    "fields": {
+        "app_label": "P011",
+        "model": "entry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 65,
+    "fields": {
+        "app_label": "P011",
+        "model": "voucher"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 66,
+    "fields": {
+        "app_label": "P011",
+        "model": "year"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 67,
+    "fields": {
+        "app_label": "P011",
+        "model": "transaction"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 68,
+    "fields": {
+        "app_label": "P013",
+        "model": "bm_item"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 69,
+    "fields": {
+        "app_label": "P013",
+        "model": "businessmodel"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 70,
+    "fields": {
+        "app_label": "P013",
+        "model": "operationalgoal"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 71,
+    "fields": {
+        "app_label": "P013",
+        "model": "operationalplan"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 72,
+    "fields": {
+        "app_label": "P013",
+        "model": "project"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 73,
+    "fields": {
+        "app_label": "P013",
+        "model": "opr_bm_item"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 74,
+    "fields": {
+        "app_label": "P013",
+        "model": "member"
+    }
+}
+]

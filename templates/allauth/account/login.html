@@ -1,0 +1,63 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+<h1>{% trans "system name" %}</h1>
+
+<div class="login-panel panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Please Sign In</h3>
+    </div>
+    <div class="panel-body">
+        <form class="login" method="POST" action="{% url 'account_login' %}">
+            <fieldset>
+              {% csrf_token %}
+              {{ form.as_p }}
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+              {% endif %}
+                <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<p>{% trans 'you dont have account' %}&nbsp;?&nbsp;<a href="{{ signup_url }}">sign up</a></p>
+
+{% get_providers as socialaccount_providers %}
+
+{% if socialaccount_providers %}
+
+
+<div class="login-panel panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Please Sign In</h3>
+    </div>
+    <div class="panel-body">
+
+    <div class="socialaccount_ballot">
+      <ul class="socialaccount_providers">
+        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+      </ul>
+    </div>
+
+    {% include "socialaccount/snippets/login_extra.html" %}
+
+    </div>
+</div>
+
+{% else %}
+
+{% comment %} <p>{% blocktrans %}If you have not created an account yet, then please {% endcomment %}
+{% comment %} <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p> {% endcomment %}
+
+{% endif %}
+
+
+{% endblock %}

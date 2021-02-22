@@ -1,0 +1,7 @@
+{% load static %}
+{% load i18n %}
+{% load general_tags %}
+
+<a href="{% url 'Core:documents-redirect' model_class=object|class_name model_id=object.pk component_name=component_name%}" class="general-link">
+    <i class="fa fa-fas fa-paperclip" aria-hidden="true"></i>&nbsp;{% trans 'documents' %}
+</a>

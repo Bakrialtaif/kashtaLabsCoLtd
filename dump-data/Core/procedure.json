@@ -1,0 +1,262 @@
+[
+{
+    "model": "Core.procedure",
+    "pk": 3,
+    "fields": {
+        "component": 52,
+        "code": "fiscal_year_open_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 4,
+    "fields": {
+        "component": 52,
+        "code": "fiscal_year_close_procedure",
+        "support_workflow": false,
+        "order": 2
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 6,
+    "fields": {
+        "component": 115,
+        "code": "stocktaking_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 9,
+    "fields": {
+        "component": 62,
+        "code": "operational_plan_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 10,
+    "fields": {
+        "component": 62,
+        "code": "operational_project_procedure",
+        "support_workflow": false,
+        "order": 2
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 11,
+    "fields": {
+        "component": 61,
+        "code": "business_model_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 14,
+    "fields": {
+        "component": 43,
+        "code": "employee_recruitment_procedure",
+        "support_workflow": true,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 15,
+    "fields": {
+        "component": 44,
+        "code": "employee_dismissal_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 16,
+    "fields": {
+        "component": 128,
+        "code": "purchase_requisitions_procedure",
+        "support_workflow": true,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 17,
+    "fields": {
+        "component": 128,
+        "code": "purchase_order_procedure",
+        "support_workflow": true,
+        "order": 2
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 18,
+    "fields": {
+        "component": 35,
+        "code": "unit_card_build_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 19,
+    "fields": {
+        "component": 35,
+        "code": "job_card_build_procedure",
+        "support_workflow": true,
+        "order": 2
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 22,
+    "fields": {
+        "component": 131,
+        "code": "sales_order_procedure",
+        "support_workflow": false,
+        "order": 2
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 23,
+    "fields": {
+        "component": 28,
+        "code": "workflow_build_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 24,
+    "fields": {
+        "component": 24,
+        "code": "user_creation_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 25,
+    "fields": {
+        "component": 108,
+        "code": "customer_account_creation_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 26,
+    "fields": {
+        "component": 109,
+        "code": "provider_account_creation_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 27,
+    "fields": {
+        "component": 50,
+        "code": "chart_of_accounts_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 28,
+    "fields": {
+        "component": 51,
+        "code": "chart_of_cost_centers_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 32,
+    "fields": {
+        "component": 28,
+        "code": "dummy_test_procedure",
+        "support_workflow": true,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 33,
+    "fields": {
+        "component": 48,
+        "code": "entry_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 34,
+    "fields": {
+        "component": 131,
+        "code": "quotation_request_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 35,
+    "fields": {
+        "component": 131,
+        "code": "delivery_sales_procedure",
+        "support_workflow": false,
+        "order": 3
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 36,
+    "fields": {
+        "component": 128,
+        "code": "purchase_check_in_procedure",
+        "support_workflow": true,
+        "order": 4
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 38,
+    "fields": {
+        "component": 128,
+        "code": "purchase_order_financial_processing",
+        "support_workflow": true,
+        "order": 3
+    }
+},
+{
+    "model": "Core.procedure",
+    "pk": 39,
+    "fields": {
+        "component": 146,
+        "code": "permission_request_procedure",
+        "support_workflow": false,
+        "order": 1
+    }
+}
+]

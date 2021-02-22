@@ -1,0 +1,21 @@
+{% load static %}
+{% load i18n %}
+<section class="{{ app_label }}">
+            <div class="row">
+    {% for menu in program.get_the_children %}
+        {% if menu.show_in_menu %}
+                {% for operation in menu.get_the_children %}
+                    {% if operation.show_in_menu %}
+                        <div class="col-lg-3">
+                            <div class="panel panel-info operation-box" style="background-color: {{ operation.color }};">
+                                <div class="panel-body opr-icon-block">
+                                    <a href="{{ operation.get_reverse }}"><i class="fa fa-fas fa-grip-vertical" aria-hidden="true"></i>&nbsp;&nbsp;<span>{% trans operation.name %}</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+        {% endif %}
+    {% endfor %}
+            </div>
+</section>

@@ -1,0 +1,21 @@
+{% load i18n %}
+{% load static %}
+
+<link href="{% static 'charts/OrgChart/css/jquery.orgchart.css' %}" rel="stylesheet" type="text/css">
+<script src="{% static 'charts/OrgChart/js/jquery.orgchart.js' %}"></script>
+<script src="{% static 'charts/OrgChart/js/html2canvas.min.js' %}"></script>
+<script src="{% static 'charts/OrgChart/js/jsPDF.min.js' %}"></script>
+
+<script type="text/javascript">
+    $(function() {
+        var datascource = {{ diagram.get_dict|safe }};
+
+        $("#{{ containerId }}").orgchart({
+            'data' : datascource,
+            'nodeContent': 'title',
+            'pan': true,
+        });
+
+        $('.orgchart').addClass('noncollapsable');  
+    });
+</script>

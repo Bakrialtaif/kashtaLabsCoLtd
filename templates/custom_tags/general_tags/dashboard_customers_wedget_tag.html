@@ -1,0 +1,59 @@
+{% load static %}
+{% load i18n %}
+
+{% if 'P008' in request.organization.get_programs %}
+
+    {% load leaflet_tags %}
+    {% block header %}
+        {% leaflet_css plugins="forms" %}
+        {% leaflet_js plugins="forms" %}
+        {{ form.media}}
+    {% endblock %}
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#customers" data-toggle="tab">{% trans 'the customers' %}</a></li>
+                <li><a href="#new-customer" data-toggle="tab">{% trans 'create new customer' %}</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="customers">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th width="5%">&nbsp;</th>
+                                <th width="45%" style="text-align: right;">{% trans 'customer' %}</th>
+                                <th width="50%">{% trans 'operations dashboard' %}</th>
+                            </tr>
+                        </thead>
+                        {% for organization in request.user.organizations.all %}
+                            <tr>
+                                <td align="center">{{ forloop.counter }}</td>                                
+                                <td>{{ organization.organization.name }}</td>
+                                <td align="center">
+                                    <a href="{% url 'P014:home' customer_id=organization.organization.pk %}">
+                                        <span>{% trans 'operations dashboard' %}</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="new-customer">
+                    <form action="{% url 'Core:organization-insert' type=customer_type %}" method="POST">
+                        <table class="table">
+                            {% csrf_token %}
+                            {{ create_new_customer_form.as_table }}
+                            <tr>
+                                <td width="15%"></td>
+                                <td width="85%"><button type="submit" class="btn btn-success">{% trans 'save' %}</button></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

@@ -1,0 +1,25 @@
+{% load i18n %}
+{% load static %}
+
+<ul class="list-unstyled">
+    <li>
+        <a href="{% url 'P001:managerial-communications' %}">
+            <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans 'managerial communication dashboard' %}
+        </a>
+    </li>
+    {% for folder in basic_inboxes %}
+        <li>
+            <a href="{% url 'P001:managerial-communications-folder' folder_id=folder.pk %}" {% if folder.pk == current_folder_id %} class="active" {% endif %}>
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{{ folder.get_name }}
+            </a>
+        </li>
+    {% endfor %}
+    {% for folder in folders %}
+        <li>
+            <a href="{% url 'P001:managerial-communications-folder' folder_id=folder.pk %}" {% if request.resolver_match.app_name == 'P002' %} class="active" {% endif %}>
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{{ folder.get_name }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+

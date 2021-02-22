@@ -1,0 +1,54 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load presentation_tags %}
+{% block page_title %}{% trans 'sheets' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:home' %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'procedures' %}</li>
+{% endblock %}
+{% block content %}
+<section class="procedures">
+    <table class="table table-hover table-striped table-bordered">
+        <thead>
+            <tr role="row">
+                <th class="sorting_asc" style="width: 5%;">
+                </th>
+                <th class="sorting" style="width: 25%;">{% trans 'program' %}&nbsp;&raquo;&nbsp;{% trans 'operation' %}</th>
+                <th class="sorting" style="width: 30%;">{% trans 'procedure' %}&nbsp;<span class="hint">[&nbsp;{% trans 'code' %}&nbsp;]</span></th>
+                <th class="sorting" style="width: 10%;"></th>
+                <th class="sorting" style="width: 10%;"></th>
+                <th class="sorting" style="width: 10%;">{% trans 'settings' %}</th>
+                <th class="sorting" style="width: 10%;">{% trans 'support workflow' %}</th>
+            </tr>
+        </thead>
+        <tbody>                
+        {% for procedure in procedures %}
+            <tr role="row">
+                <td style="text-align: center;">{{ forloop.counter }}</td>
+                <td>{{ procedure.component.parent.parent }}&nbsp;&raquo;&nbsp;{{ procedure.component }}</td>
+                <td>{{ procedure }}&nbsp;<span class="hint">[&nbsp;{{ procedure.code }}&nbsp;]</span></td>
+                <td>{{ procedure.content_type.model }}</td>
+                <td align="center">
+                    <a href="{% url 'Core:procedure-dashboard' procedure_id=procedure.pk %}" class="general-link">
+                        {% trans 'procedure dashboard' %}
+                    </a>
+                </td>
+                <td align="center">
+                    <a href="{% url 'Core:procedure-edit' component_id=procedure.component.pk procedure_id=procedure.id type=2 %}" data-toggle='modal' data-target='#modal' class="general-link">
+                        <i class="fa fa-edit" aria-hidden="true"></i>&nbsp;{% trans 'edit' %}
+                    </a>
+                </td>
+                <td align="center">
+                    {% if procedure.support_workflow %}
+                        <i class="fa fa-far fa-check-square hint" style="color: green !important">
+                    {% else %}
+                        <i class="fa fa-far fa-times-circle hint">
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

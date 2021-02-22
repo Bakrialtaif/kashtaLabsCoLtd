@@ -1,0 +1,12 @@
+[
+{
+    "model": "Core.fact",
+    "pk": 2,
+    "fields": {
+        "element": 12,
+        "code": "profit",
+        "about": "",
+        "order": 1
+    }
+}
+]

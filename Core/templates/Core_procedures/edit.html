@@ -1,0 +1,16 @@
+{% extends "base/header/modal_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block modal-header %}{% trans 'edit' %}{% endblock %}
+{% block modal-body %}
+<section class="edit">
+    <form action="{% url 'Core:procedure-update' component_id=component.pk procedure_id=procedure.pk type=type %}" method="POST" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table">
+        {{ form.as_table }}
+        </table>
+        <button type="submit" class="btn btn-warning">{% trans 'update' %}</button>
+    </form>
+</section>
+{% endblock %}
+{% block modal-footer %}{% endblock %}

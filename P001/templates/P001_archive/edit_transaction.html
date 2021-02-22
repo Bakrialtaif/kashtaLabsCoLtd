@@ -1,0 +1,39 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load archive_tags %}
+{% block page_title %}{% trans 'managerial communications' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'P001:managerial-communications-folder' folder_id=folder.pk %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'P005' %}</li>
+    <li class="breadcrumb-back">{% trans 'managerial communications' %}</li>
+    <li class="breadcrumb-back">{{ folder.get_name }}</li>
+    <li class="breadcrumb-back">{% trans 'add' %}</li>
+{% endblock %}
+{% block content %}
+<section class="add">
+    <form action="{% url 'P001:archives-transaction-update' folder_id=folder.pk id=transaction.pk %}" method="POST">
+        {% csrf_token %}
+        <table class="table">
+        {{ form.as_table }}
+        <tr>
+            <td></td>
+            <td>
+                <select name="language" id="id_language">
+                    {% get_available_languages as LANGUAGES %}
+                    {% for lang in LANGUAGES %}
+                        <option value="{{ lang.0 }}">
+                            [&nbsp;{{ lang.0 }}&nbsp;]&nbsp;{{ lang.1 }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="submit" class="btn btn-warning">{% trans 'update' %}</button></td>
+        </tr>
+        </table>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% load static %}
+{% load i18n %}
+{% load general_tags %}
+{% if requestObject.status != not_send %}
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {% trans 'request data log' %}
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                <tbody>
+                    {% regroup requestObject.data.all|dictsort:'task_id' by task as taskDataList %}
+                    {% for taskDataObject in taskDataList%}
+                        <tr>
+                            <td style="text-align: center;">{{ forloop.counter }}</td=>
+                            <td colspan=2>{{ taskDataObject.grouper.action }}&nbsp;&raquo;&nbsp;{{ taskDataObject.grouper.action.executor.get_full_name }}</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        {% for data in taskDataObject.list %}
+                            <tr>
+                                <td width="5%" style="text-align: center;">&nbsp;</td>
+                                <td width="5%" style="text-align: center;">[&nbsp;{{ forloop.counter }}&nbsp;]</td>
+                                <td width="35%">{{ data.input }}</td>
+                                <td width="55%">
+                                    {% if data.input.type == 'ModelChoiceField'%}
+                                        {{ data.track }}
+                                    {% else %}
+                                        {{ data.value|linebreaks }}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% endfor %}        
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {% trans 'request documents log' %}
+            </div>
+            <div class="panel-body">
+                {% if requestObject.status == 'UNDER_PROCESS' %}
+                    {% DocumentAddLink object=requestObject.get_object back_url=back_url %}
+                    {% comment %} <a href="{% url 'Core:document-add' ownership='organization' app_label=requestObject|app_label content_type=requestObject.task|verbose_name|cut:' ' object_id=requestObject.task.pk back_url=back_url back_type='others' %}" data-toggle='modal' data-target='#modal' class="general-link"> <i class="fa fa-fas fa-plus-square" aria-hidden="true"></i>&nbsp;{% trans 'add' %} </a> {% endcomment %}
+                {% endif %}
+                <br>
+                <br>
+                <table class="table">
+                    <tbody>
+                        {% regroup requestObject.data.all|dictsort:'task_id' by task as taskDataList %}
+                        {% for taskDataObject in taskDataList%}
+                            <tr>
+                                <td style="text-align: center;">{{ forloop.counter }}</td>
+                                <td colspan=2>{{ taskDataObject.grouper.action }}&nbsp;&raquo;&nbsp;{{ taskDataObject.grouper.action.executor.get_full_name }}</td>
+                                <td >&nbsp;</td>
+                            </tr>
+                            {% for document in taskDataObject.grouper.documents.all %}
+                                <tr>
+                                    <td width="5%" style="text-align: center;">&nbsp;</td>
+                                    <td width="5%" style="text-align: center;">[&nbsp;{{ forloop.counter }}&nbsp;]</td>
+                                    <td width="35%" >{{ document }}</td>
+                                    <td width="55%" align="center">
+                                        <a href="/uploads/{{ document.file }}" download>{% trans 'download' %}</a>
+                                        &nbsp;&nbsp;
+                                        <a href="/uploads/{{ document.file }}" target="_blank">{% trans 'open' %}</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% endfor %}        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

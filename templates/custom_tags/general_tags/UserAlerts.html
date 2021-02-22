@@ -1,0 +1,8 @@
+{% load static %}
+{% load i18n %}
+
+<li>
+    <a href="{% url 'Core:alert-prepare' %}">
+        <span class="hint">{{ alert_number }}</span> <i class="fa fa-bell fa-fw"></i>
+    </a>
+</li>

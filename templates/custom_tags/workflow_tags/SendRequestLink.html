@@ -1,0 +1,8 @@
+{% load static %}
+{% load i18n %}
+
+{% if requestObject.status == not_send %}
+    <a href="{% url 'Core:request-send-confirmation' wf_request_id=requestObject.pk %}" data-toggle='modal' data-target='#modal' class="general-link">
+        <i class="fa fa-edit" aria-hidden="true"></i>&nbsp;{% trans 'send request' %}
+    </a>
+{% endif %}

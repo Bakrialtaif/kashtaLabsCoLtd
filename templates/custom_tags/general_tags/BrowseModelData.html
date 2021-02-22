@@ -1,0 +1,11 @@
+{% load static %}
+{% load i18n %}
+
+<table class="table">
+    {% for item in form.items %}
+        <tr>
+            <td style="width: 25%; text-align: left">{% trans item.0 %}</td>
+            <td style="width: 75%; text-align: right">{{ item.1 }}</td>
+        </tr>
+    {% endfor %}
+</table>

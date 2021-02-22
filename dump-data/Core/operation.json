@@ -1,0 +1,977 @@
+[
+{
+    "model": "Core.operation",
+    "pk": 1,
+    "fields": {
+        "content_type": 1,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 2,
+    "fields": {
+        "content_type": 2,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 3,
+    "fields": {
+        "content_type": 3,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 4,
+    "fields": {
+        "content_type": 4,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 5,
+    "fields": {
+        "content_type": 5,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 6,
+    "fields": {
+        "content_type": 6,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 7,
+    "fields": {
+        "content_type": 7,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 8,
+    "fields": {
+        "content_type": 8,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 9,
+    "fields": {
+        "content_type": 9,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 10,
+    "fields": {
+        "content_type": 10,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 11,
+    "fields": {
+        "content_type": 11,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 12,
+    "fields": {
+        "content_type": 12,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 13,
+    "fields": {
+        "content_type": 13,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 14,
+    "fields": {
+        "content_type": 14,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 15,
+    "fields": {
+        "content_type": 15,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 16,
+    "fields": {
+        "content_type": 16,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 17,
+    "fields": {
+        "content_type": 17,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 18,
+    "fields": {
+        "content_type": 18,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 19,
+    "fields": {
+        "content_type": 19,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": true,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 20,
+    "fields": {
+        "content_type": 20,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 21,
+    "fields": {
+        "content_type": 21,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 22,
+    "fields": {
+        "content_type": 22,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 23,
+    "fields": {
+        "content_type": 23,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 24,
+    "fields": {
+        "content_type": 24,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 25,
+    "fields": {
+        "content_type": 25,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 26,
+    "fields": {
+        "content_type": 26,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 27,
+    "fields": {
+        "content_type": 27,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 28,
+    "fields": {
+        "content_type": 28,
+        "support_workflow": true,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": true,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 29,
+    "fields": {
+        "content_type": 29,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 30,
+    "fields": {
+        "content_type": 30,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 31,
+    "fields": {
+        "content_type": 31,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 32,
+    "fields": {
+        "content_type": 32,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 33,
+    "fields": {
+        "content_type": 33,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": true,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 34,
+    "fields": {
+        "content_type": 34,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 35,
+    "fields": {
+        "content_type": 35,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 36,
+    "fields": {
+        "content_type": 36,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 37,
+    "fields": {
+        "content_type": 37,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 38,
+    "fields": {
+        "content_type": 38,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 39,
+    "fields": {
+        "content_type": 39,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 40,
+    "fields": {
+        "content_type": 40,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 41,
+    "fields": {
+        "content_type": 41,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 42,
+    "fields": {
+        "content_type": 42,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 43,
+    "fields": {
+        "content_type": 43,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 44,
+    "fields": {
+        "content_type": 44,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 45,
+    "fields": {
+        "content_type": 45,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 46,
+    "fields": {
+        "content_type": 46,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 47,
+    "fields": {
+        "content_type": 47,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 48,
+    "fields": {
+        "content_type": 48,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 49,
+    "fields": {
+        "content_type": 49,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 50,
+    "fields": {
+        "content_type": 50,
+        "support_workflow": true,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": true,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 51,
+    "fields": {
+        "content_type": 51,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 52,
+    "fields": {
+        "content_type": 52,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 53,
+    "fields": {
+        "content_type": 53,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 54,
+    "fields": {
+        "content_type": 54,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": true,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 55,
+    "fields": {
+        "content_type": 55,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 56,
+    "fields": {
+        "content_type": 56,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 57,
+    "fields": {
+        "content_type": 57,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 58,
+    "fields": {
+        "content_type": 58,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 59,
+    "fields": {
+        "content_type": 59,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 60,
+    "fields": {
+        "content_type": 60,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 61,
+    "fields": {
+        "content_type": 61,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 62,
+    "fields": {
+        "content_type": 62,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 63,
+    "fields": {
+        "content_type": 63,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 64,
+    "fields": {
+        "content_type": 64,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 65,
+    "fields": {
+        "content_type": 65,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 66,
+    "fields": {
+        "content_type": 66,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 67,
+    "fields": {
+        "content_type": 67,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 68,
+    "fields": {
+        "content_type": 68,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 69,
+    "fields": {
+        "content_type": 69,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 70,
+    "fields": {
+        "content_type": 70,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 71,
+    "fields": {
+        "content_type": 71,
+        "support_workflow": true,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": true,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 72,
+    "fields": {
+        "content_type": 72,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 73,
+    "fields": {
+        "content_type": 73,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 74,
+    "fields": {
+        "content_type": 74,
+        "support_workflow": false,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": false,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+},
+{
+    "model": "Core.operation",
+    "pk": 75,
+    "fields": {
+        "content_type": 75,
+        "support_workflow": true,
+        "support_privileges": false,
+        "selected_chart": null,
+        "support_documents": true,
+        "permitted_doc_no": 1,
+        "order": null
+    }
+}
+]

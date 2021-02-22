@@ -1,0 +1,7 @@
+{% extends "base/header/no_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+    {{ document.file.url }}
+    <img src="{{ document.file.url }}" class="img-responsive">
+{% endblock %}

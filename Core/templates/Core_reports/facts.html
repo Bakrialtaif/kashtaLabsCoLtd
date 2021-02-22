@@ -1,0 +1,55 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load reports_tags %}
+{% block page_title %}{% trans 'tasks dashboard' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:reports-dimension-context' dimension_id=dimension.pk %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'Core' %}</li>
+    <li class="breadcrumb-back">{% trans 'reports' %}</li>
+    <li class="breadcrumb-back">{{ dimension }}</li>
+    <li class="breadcrumb-back">{{ context }}</li>
+    <li class="breadcrumb-back">{{ case }}</li>
+{% endblock %}
+{% block content %}
+    <section class="reports">
+        <div class="header-links">
+            <a href="{% url 'Core:reports-dimension-context-case-fact-add' dimension_id=dimension.pk context_id=context.pk case_id=case.pk %}">
+                {% trans 'add' %}
+            </a>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td width="5%">&nbsp;</td>
+                    <td width="15%" style="text-align: right;">{% trans 'name' %}</td>
+                    <td width="50%">{% trans 'datums structure' %}</td>
+                    <td width="15%">{% trans 'datums' %}</td>
+                    <td width="15%">{% trans 'settings' %}</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for fact in case.facts.all %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ fact }}</td>
+                        <td align="center">
+                            {% for datum in fact.get_datums_structure %}
+                                [&nbsp;{{ datum }}&nbsp;]&nbsp;
+                            {% endfor %}
+                        </td>
+                        <td align="center">
+                            <a href="{% url 'Core:facts-datums' fact_id=fact.pk %}">{% trans 'datums' %}</a>
+                        </td>
+                        <td align="center">
+                            <a href="{% url 'Core:reports-dimension-context-case-fact-edit' dimension_id=dimension.pk context_id=context.pk case_id=case.pk fact_id=fact.pk %}">{% trans 'edit' %}</a>
+                            &nbsp;
+                            <a href="{% url 'Core:reports-dimension-context-case-fact-confirm' dimension_id=dimension.pk context_id=context.pk case_id=case.pk fact_id=fact.pk %}" data-toggle='modal' data-target='#modal' >{% trans 'delete' %}</a>
+                            &nbsp;
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

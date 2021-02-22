@@ -1,0 +1,55 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block page_title %}{% trans 'sheets' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{{ back_url_path }}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans appLabel %}</li>
+    <li class="breadcrumb-back">{% trans 'sheets' %}</li>
+    <li class="breadcrumb-back">{% trans sheet.code %}</li>
+{% endblock %}
+
+{% block content %}
+
+<section class="Core">
+
+    <div class="header-links">
+        <a href="{% url 'Core:sheet-content-add' app_label=appLabel sheet_id=sheet.id back_url=back_url %}" data-toggle='modal' data-target='#modal' class="general-link">
+            <i class="fa fa-far fa-plus-square" aria-hidden="true"></i>&nbsp;{% trans 'add' %}
+        </a>
+        &nbsp;&nbsp;
+        <a href="{% url 'Core:sheet-details' sheet_id=sheet.pk %}" data-toggle='modal' data-target='#modal' class="general-link">
+            <i class="fa fa-fas fa-file-alt" aria-hidden="true"></i>&nbsp;{% trans 'browse sheet' %}
+        </a>
+    </div>
+    <table class="table table-striped table-bordered dataTable">
+        <thead>
+            <tr role="row">
+                <th class="sorting_asc" style="width: 5%;">
+                </th>
+                <th class="sorting" style="width: 70%;">{% trans 'name' %}</th>
+                <th class="sorting" style="width: 25%;">{% trans 'paragraphs' %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        {% for paragraph in sheet.paragraphs.all %}
+            <tr role="row" class="odd">
+                <td style="text-align: center;">{{ forloop.counter }}</td>
+                <td>{{ paragraph.title }}</td>
+                <td align="center">
+                    <a href="{% url 'Core:sheet-content-edit' app_label=appLabel sheet_id=sheet.id id=paragraph.id back_url=back_url %}" data-toggle='modal' data-target='#modal' class="general-link">
+                        <i class="fa fa-edit" aria-hidden="true"></i>&nbsp;{% trans 'edit' %}
+                    </a>
+                    &nbsp;
+                    <a href="{% url 'Core:sheet-content-confirm' app_label=appLabel sheet_id=sheet.id id=paragraph.id back_url=back_url %}" data-toggle='modal' data-target='#modal' class="general-link">
+                        <i class="fa fa-far fa-trash-alt" aria-hidden="true"></i>&nbsp;{% trans 'delete' %}
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        </table>   
+</section>
+
+{% endblock %}

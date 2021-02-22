@@ -1,0 +1,12 @@
+[
+{
+    "model": "Core.feature",
+    "pk": 1,
+    "fields": {
+        "component": 10,
+        "title": "test",
+        "body": "asdf asdf",
+        "order": 1
+    }
+}
+]

@@ -1,0 +1,12 @@
+{% load static %}
+{% load i18n %}
+
+{% trans wf_request.status %}
+
+{% comment %} <a href="{% url 'P002:browse-request' wf_request_id=wf_request.pk %}" data-toggle='modal' data-target='#modal' class="general-link">
+    <i class="fa fa-edit" aria-hidden="true"></i>&nbsp;{% trans 'browse' %}
+</a> {% endcomment %}
+
+<a href="{% url 'Core:request-prepare' wf_request_id=request.pk %}" class="general-link">
+    <i class="fa fa-edit" aria-hidden="true"></i>&nbsp;{% trans 'browse request' %}
+</a>

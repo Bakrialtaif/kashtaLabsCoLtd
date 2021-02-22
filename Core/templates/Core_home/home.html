@@ -1,0 +1,84 @@
+{% extends "base/header/system_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block page_title %}{% trans 'Core' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back">{% trans 'Core' %}</li>
+    <li class="breadcrumb-back">{% trans 'home' %}</li>
+{% endblock %}
+{% block content %}
+<section class="Core">
+    <div class="panel panel-default report-config-panel">
+        <div class="panel-heading">
+            <i class="fa fa-cog fa-fw"></i> {% trans 'operations' %}
+        </div>
+        <div class="panel-body">
+
+            <div class="row">
+
+                <div class="col-lg-3">
+                    <div class="panel panel-info">
+                        <div class="panel-body opr-icon-block">
+                            <a href="{% url 'Core:components-home' %}"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;<span>{% trans 'system component data' %}</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="panel panel-info">
+                        <div class="panel-body opr-icon-block">
+                            <a href="{% url 'Core:reports' %}"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;<span>{% trans 'reports configuration' %}</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="col-lg-3">
+                    <div class="panel panel-info">
+                        <div class="panel-body opr-icon-block">
+                            <a href="{% url 'Core:versions' %}"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;<span>{% trans 'system versions' %}</span></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="panel panel-default report-config-panel">
+        <div class="panel-heading">
+            <i class="fa fa-cog fa-fw"></i> {% trans 'settings' %}
+        </div>
+        <div class="panel-body">
+
+            <div class="row">
+
+                <div class="col-lg-3">
+                    <div class="panel panel-info">
+                        <div class="panel-body opr-icon-block">
+                            <a href="{% url 'Core:configuration-transactions' %}"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;<span>{% trans 'configuration transactions' %}</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="panel panel-info">
+                        <div class="panel-body opr-icon-block">
+                            <a href="{% url 'Core:paragraphs-home' %}"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;<span>{% trans 'paragraphs' %}</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="panel panel-info">
+                        <div class="panel-body opr-icon-block">
+                            <a href="{% url 'Core:procedure-list' %}"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;<span>{% trans 'procedures' %}</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

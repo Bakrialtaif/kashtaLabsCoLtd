@@ -1,0 +1,63 @@
+{% load static %}
+{% load i18n %}
+{% load general_tags %}
+
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+  <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".sidebar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">{{ request.organization }}</a>
+  </div>
+  <!-- /.navbar-header -->
+
+  <ul class="nav navbar-top-links navbar-right">
+      <li>
+        {% if request.LANGUAGE_CODE == 'ar' %}
+          <a href="{% url 'P001:language' language='en' %}">
+              <span class="hint">English</span>
+          </a>
+        {% endif %}
+
+        {% if request.LANGUAGE_CODE == 'en' %}
+          <a href="{% url 'P001:language' language='ar' %}">
+              <span class="hint">عربي</span>
+          </a>
+        {% endif %}
+
+      </li>  
+      
+      {% UserAlerts %}
+
+      <li class="dropdown">
+        <a href="{% url 'P001:home' %}">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          {% comment %} {{ request.user.get_full_name }} {% endcomment %}
+        </a>
+      </li>
+
+      <li class="dropdown">
+        <a href="{% url 'logout' %}?next={% url 'website-home' %}">
+          <i class="fa fa-fas fa-sign-out-alt" aria-hidden="true"></i>
+          {% trans 'logout'%}
+        </a>
+      </li>
+  </ul>
+  <!-- /.navbar-top-links -->
+
+  <div class="navbar-default navbar-static-side" role="navigation">
+      <div class="sidebar-collapse">
+          <img src="{{ request.orgLogo }}" style="display:inline-block; text-align: center; max-width: 200px; left: 50%;">
+          <div class="divider"></div>
+          <ul class="nav" id="side-menu">
+              {% getApps %}
+          </ul>
+          <!-- /#side-menu -->
+      </div>
+      <!-- /.sidebar-collapse -->
+  </div>
+  <!-- /.navbar-static-side -->
+</nav>

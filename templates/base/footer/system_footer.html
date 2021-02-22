@@ -1,0 +1,45 @@
+{% load static %}
+{% load i18n %}
+
+<section class="system-footer">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+
+                <div class="col-lg-6 col-xs-12 about-company">
+                  <h2>{% trans 'bladalnoor name' %}</h2>
+                    <p class="pr-5 text-white-50">
+                        <img src="{% static 'theme/images/logo.png' %}" class='img-logo' style="width: 75px; float: right; margin-left: 10px;">
+                        {% trans 'bladalnoor about' %}
+                    </p>
+                    <p>
+                      <a href="#"><i class="fa fa-facebook-square mr-1"></i></a>&nbsp;&nbsp;&nbsp;<a href="#"><i class="fa fa-linkedin-square"></i></a>
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-xs-12 about-company"></div>
+
+                <div class="col-lg-4 col-xs-12 location">
+                  <h2 class="mt-lg-0 mt-sm-4">{% trans 'contact data' %}</h4>
+                  <p>{% trans 'bladalnoor title' %}</p>
+                  <p class="mb-0"><i class="fa fa-phone mr-3"></i>{% trans 'bladalnoor phone' %}</p>
+                  <p><i class="fa fa-envelope-o mr-3"></i>{% trans 'bladalnoor email' %}</p>
+                </div>
+
+              </div>
+              <div class="row mt-5">
+                <div class="col copyright text-center">
+                    <p class="">
+                        <small class="text-white-50">
+                            {% trans 'copyright message' %}
+                            <script type="text/javascript">
+                                document.write(new Date().getFullYear());
+                            </script>
+                            &copy;
+                        </small>
+                    </p>
+                </div>
+              </div>
+        </div>
+    </div>
+</section>

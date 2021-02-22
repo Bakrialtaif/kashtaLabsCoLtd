@@ -1,0 +1,93 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load presentation_tags %}
+{% block page_title %}{% trans 'home' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'Core:home' %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'data control'%}</li>
+{% endblock %}
+{% block content %}
+    <div class="header-links">
+        <a href="{% url 'Core:package-add' %}">{% trans 'add' %}</a>
+    </div>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+        {% for package in packages %}
+        <li {% if request.session.package_id == package.pk %} class="active" {% endif %}><a href="#{{ package.pk }}" data-toggle="tab">[&nbsp;{{ forloop.counter }}&nbsp;]&nbsp;{{ package }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        {% for package in packages %}
+            <div class="tab-pane fade in {% if request.session.package_id == package.pk %} active {% endif %}" id="{{ package.pk }}">
+                <div class="well">
+                    <div class="header-links">
+                        {% comment %} <a href="{% url 'Core:documents-prepare' ownership='organization' app_label='Core' content_type='component' object_id=package.pk %}" class="general-link">
+                            <i class="fa fa-fas fa-paperclip" aria-hidden="true"></i>&nbsp;{% trans 'logo' %}
+                        </a>
+                        &nbsp; {% endcomment %}
+                        <a href="{% url 'Core:package-edit' package_id=package.pk %}">{% trans 'edit' %}</a>
+                        &nbsp;
+                        {% if package.children.count == 0 %}
+                            <a href="{% url 'Core:package-confirm' package_id=package.pk %}" data-toggle='modal' data-target='#modal' >{% trans 'delete' %}</a>
+                        {% else %}
+                            <a href="#" class="un-active-link">{% trans 'delete' %}</a>
+                        {% endif %}
+                        &nbsp;
+                        <a href="{% url 'Core:program-add' package_id=package.pk %}">{% trans 'add' %}</a>
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <th style="width:5%; text-align: center">&nbsp;</th>
+                            <th style="width:25%; text-align: right">{% trans 'url' %}</th>
+                            <th style="width:20%; text-align: right">{% trans 'the program' %}</th>
+                            <th style="width:30%; text-align: right">{% trans 'settings' %}</th>
+                            <th style="width:20%; text-align: right">{% trans 'program dashboard' %}</th>
+                        </thead>
+                        <tbody>
+                            {% for program in package.get_the_children %}
+                            <tr>
+                                <td align="center">{{ program.order }}</td>
+                                <td align="left">{{ program.get_reverse|safe }}</td>
+                                <td>
+                                    {% if program.show_in_menu %}
+                                        <i class="fa fa-far fa-check-square hint" style="color: green;"></i>
+                                    {% else %}
+                                        <i class="fa fa-far fa-minus-square hint"></i>
+                                    {% endif %}
+                                    &nbsp;{% trans program.name %}
+                                </td>
+                                <td align="right">                                
+                                    {% comment %} <a href="{% url 'Core:documents-prepare' ownership='organization' app_label='Core' content_type='component' object_id=program.pk %}" class="general-link">
+                                        <i class="fa fa-fas fa-paperclip" aria-hidden="true"></i>&nbsp;{% trans 'logo' %}
+                                    </a>
+                                    &nbsp; {% endcomment %}
+                                    <a href="{% url 'Core:program-edit' package_id=package.pk program_id=program.pk %}">{% trans 'edit' %}</a>
+                                    &nbsp;
+                                    {% if program.children.count == 0 %}
+                                        <a href="{% url 'Core:program-confirm' package_id=package.pk program_id=program.pk %}" data-toggle='modal' data-target='#modal' >{% trans 'delete' %}</a>
+                                    {% else %}
+                                        <a href="#" class="un-active-link">{% trans 'delete' %}</a>
+                                    {% endif %}
+                                </td>
+                                <td align="right">
+                                    <a href="{% url 'Core:program-dashboard' package_id=package.pk program_id=program.pk %}">{% trans 'program dashboard' %}</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="col-lg-12" style="direction: ltr; text-align: center">
+        <div id="chart-container"></div>
+    </div>
+{% endblock %}
+{% block footer %}
+    {% ComponentDiagram component_id=start.pk current_id=start.pk containerId='chart-container' %}
+{% endblock %}

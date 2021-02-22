@@ -1,0 +1,16 @@
+{% extends "base/header/modal_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block modal-header %}{% trans 'add' %}{% endblock %}
+{% block modal-body %}
+<section class="add">
+    <form action="{% url 'Core:sheet-content-insert' app_label=appLabel sheet_id=sheet.id back_url=back_url %}" method="POST" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table">
+        {{ form.as_table }}
+        </table>
+        <button type="submit" class="btn btn-success">{% trans 'save' %}</button>
+    </form>
+</section>
+{% endblock %}
+{% block modal-footer %}{% endblock %}

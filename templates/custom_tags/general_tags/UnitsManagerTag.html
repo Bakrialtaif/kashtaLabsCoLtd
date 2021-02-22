@@ -1,0 +1,15 @@
+{% load static %}
+{% load i18n %}
+    
+<ul>
+    <li>
+        <a href="{% url 'P003:units-manager' %}" class="general-link">
+            {% trans 'units' %}</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'P003:committees-manager' %}" class="general-link">
+            {% trans 'committees' %}</span>
+        </a>
+    </li>
+</ul>

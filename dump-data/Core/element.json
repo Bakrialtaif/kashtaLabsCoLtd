@@ -1,0 +1,137 @@
+[
+{
+    "model": "Core.element",
+    "pk": 1,
+    "fields": {
+        "parent": null,
+        "code": "reports",
+        "type": "START",
+        "about": "0",
+        "order": 0,
+        "lft": 1,
+        "rght": 18,
+        "tree_id": 1,
+        "level": 0
+    }
+},
+{
+    "model": "Core.element",
+    "pk": 2,
+    "fields": {
+        "parent": 1,
+        "code": "ORGANIZATIONAL",
+        "type": "DIMENSION",
+        "about": "1",
+        "order": 1,
+        "lft": 2,
+        "rght": 3,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "Core.element",
+    "pk": 3,
+    "fields": {
+        "parent": 1,
+        "code": "OPERATIONAL",
+        "type": "DIMENSION",
+        "about": "2",
+        "order": 2,
+        "lft": 4,
+        "rght": 5,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "Core.element",
+    "pk": 4,
+    "fields": {
+        "parent": 1,
+        "code": "FINANCIAL",
+        "type": "DIMENSION",
+        "about": "3",
+        "order": 3,
+        "lft": 6,
+        "rght": 11,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "Core.element",
+    "pk": 5,
+    "fields": {
+        "parent": 1,
+        "code": "CUSTOMERS",
+        "type": "DIMENSION",
+        "about": "4",
+        "order": 4,
+        "lft": 12,
+        "rght": 13,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "Core.element",
+    "pk": 6,
+    "fields": {
+        "parent": 1,
+        "code": "LEARNING",
+        "type": "DIMENSION",
+        "about": "5",
+        "order": 5,
+        "lft": 14,
+        "rght": 15,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "Core.element",
+    "pk": 7,
+    "fields": {
+        "parent": 1,
+        "code": "GROWTH",
+        "type": "DIMENSION",
+        "about": "6",
+        "order": 6,
+        "lft": 16,
+        "rght": 17,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "Core.element",
+    "pk": 11,
+    "fields": {
+        "parent": 4,
+        "code": "profits",
+        "type": "CONTEXT",
+        "about": "",
+        "order": 1,
+        "lft": 7,
+        "rght": 10,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "Core.element",
+    "pk": 12,
+    "fields": {
+        "parent": 11,
+        "code": "daily_profit",
+        "type": "CASE",
+        "about": "",
+        "order": 1,
+        "lft": 8,
+        "rght": 9,
+        "tree_id": 1,
+        "level": 3
+    }
+}
+]

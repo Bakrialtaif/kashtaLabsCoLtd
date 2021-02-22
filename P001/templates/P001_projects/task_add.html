@@ -1,0 +1,26 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load general_tags %}
+{% block page_title %}{% trans 'P001' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{% url 'P001:project-dashboard' project_id=project.pk %}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    <li class="breadcrumb-back">{% trans 'P013' %}</li>
+    <li class="breadcrumb-back">{{ project }}</li>
+    <li class="breadcrumb-back">{% trans 'task addition' %}</li>
+{% endblock %}
+{% block content %}
+<section class="add">
+    <form action="{% url 'P001:project-task-insert' project_id=project.pk %}" method="POST">
+        <table class="table">
+            {% csrf_token %}
+            {{ form.as_table }}
+            <tr>
+                <td></td>
+                <td><button type="submit" class="btn btn-success">{% trans 'save' %}</button></td>
+            </tr>
+        </table>
+    </form>
+</section>
+
+{% endblock %}

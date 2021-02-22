@@ -1,0 +1,12 @@
+[
+{
+    "model": "Core.parameter",
+    "pk": 1,
+    "fields": {
+        "component": 48,
+        "name": "type",
+        "value": "GENERAL",
+        "order": 1
+    }
+}
+]

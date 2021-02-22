@@ -1,0 +1,107 @@
+{% load i18n %}
+{% load static %}
+
+{% if status == 'un_protected_entries' %}
+    <ul class="list-unstyled">
+        <li>
+            <a href="{% url 'P011:entries' type=OPENING%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans OPENING %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:entries' type=GENERAL%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans GENERAL %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:entries' type=RECEIPT%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans RECEIPT %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:entries' type=PAYMENT%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans PAYMENT %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:entries' type=SETTLEMENT%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans SETTLEMENT %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:entries' type=CLOSING%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans CLOSING %}
+            </a>
+        </li>
+    </ul>
+{% endif %}
+
+{% if status == 'protected_entries' %}
+    <ul class="list-unstyled">
+        <li>
+            <a href="{% url 'P011:protected-entries' type=OPENING%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans OPENING %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:protected-entries' type=GENERAL%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans GENERAL %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:protected-entries' type=RECEIPT%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans RECEIPT %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:protected-entries' type=PAYMENT%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans PAYMENT %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:protected-entries' type=SETTLEMENT%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans SETTLEMENT %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:protected-entries' type=CLOSING%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans CLOSING %}
+            </a>
+        </li>
+    </ul>
+{% endif %}
+
+{% if status == 'posted_entries' %}
+    <ul class="list-unstyled">
+        <li>
+            <a href="{% url 'P011:posted-entries' type=OPENING%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans OPENING %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:posted-entries' type=GENERAL%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans GENERAL %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:posted-entries' type=RECEIPT%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans RECEIPT %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:posted-entries' type=PAYMENT%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans PAYMENT %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:posted-entries' type=SETTLEMENT%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans SETTLEMENT %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'P011:posted-entries' type=CLOSING%}">
+                <i class="fa fa-fas fa-file-alt"></i>&nbsp;{% trans CLOSING %}
+            </a>
+        </li>
+    </ul>
+{% endif %}

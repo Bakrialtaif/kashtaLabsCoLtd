@@ -1,0 +1,72 @@
+{% extends "base/header/browse_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load general_tags %}
+{% block page_title %}{% trans 'Core' %}{% endblock %}
+{% block crumbs %}
+    <li class="breadcrumb-back"><a href="{{ back_url_path }}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+    {% comment %} <li class="breadcrumb-back">{% trans documentObject.content_type.model %}</li> {% endcomment %}
+    {% comment %} <li class="breadcrumb-back">{% trans 'documents' %}</li> {% endcomment %}
+{% endblock %}
+{% block content %}
+<section class="Core">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="well">
+                {% BrowseModelData modelObject=documentObject.object %}
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="header-links">
+                {% if documentObject.permitted_doc_no >= 1 %}
+                    <a href="{% url 'Core:document-add' model_class=documentObject.object|class_name model_id=documentObject.object.pk component_name=documentObject.object.component.name back_url=back_url back_type='documents' %}" data-toggle='modal' data-target='#modal' class="general-link">
+                        <i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;{% trans 'add' %}
+                    </a>
+                {% else %}
+                    <a href="#" class="un-active-link">
+                        {% trans 'document number permitted limit' %}
+                    </a>
+                {% endif %}
+            </div>
+            <table class="table table-striped table-bordered">
+            <thead>
+                <tr role="row">
+                    <th style="width: 5%;">&nbsp;</th>
+                    <th style="width: 10%; text-align: {{ LANGUAGE_END }};">{% trans 'size' %}</th>
+                    <th style="width: 45%; text-align: {{ LANGUAGE_START }};">{% trans 'name' %}</th>
+                    <th style="width: 20%;">{% trans 'open' %}&nbsp;/&nbsp;{% trans 'download' %}</th>
+                    <th style="width: 20%;">{% trans 'setting' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for document in documentObject.documents%}
+                    <tr role="row" class="odd">
+                        <td style="text-align: center;">{{ forloop.counter }}</td>
+                        <td style="text-align: {{ LANGUAGE_END }};">{{ document.file.size|sizify }}</td>
+                        <td>{{ document }}</td>
+                        <td align="center">
+                            <a href="{{ document.file.url }}" download class="general-link">
+                                <i class="fa fa-fas fa-download" aria-hidden="true"></i>&nbsp;{% trans 'download' %}
+                            </a>                        
+                            &nbsp;&nbsp;
+                            <a href="{{ document.file.url }}" target="_blank" class="general-link">
+                                <i class="fa fa-far fa-folder-open" aria-hidden="true"></i>&nbsp;{% trans 'open' %}
+                            </a>                        
+                        </td>
+                        <td align="center">
+                            <a href="{% url 'Core:document-edit' model_class=documentObject.object|class_name model_id=documentObject.object.pk component_name=documentObject.object.component.name document_id=document.pk back_url=back_url back_type='documents' %}" data-toggle='modal' data-target='#modal' class="general-link">
+                                <i class="fa fa-edit" aria-hidden="true"></i>&nbsp;{% trans 'edit' %}
+                            </a>
+                            &nbsp;&nbsp;
+                            <a href="{% url 'Core:document-confirm' model_class=documentObject.object|class_name model_id=documentObject.object.pk component_name=documentObject.object.component.name document_id=document.pk back_url=back_url back_type='documents' %}" data-toggle='modal' data-target='#modal' class="general-link">
+                                <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;{% trans 'delete' %}
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </table>   
+        </div>
+    </div>
+</section>
+{% endblock %}

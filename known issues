@@ -1,0 +1,2 @@
+1- if no order, keep ordering with new records last.
+2- when creation, check if names exists [ in every records names ] 

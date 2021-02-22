@@ -1,0 +1,43 @@
+{% load static %}
+{% load i18n %}
+{% load general_tags %}
+
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+  <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">{{ request.organization }}</a>
+  </div>
+
+  <ul class="nav navbar-top-links navbar-right">
+
+      <li class="dropdown">
+        <a href="{% url 'P001:home' %}">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          {% comment %} {{ request.user.get_full_name }} {% endcomment %}
+        </a>
+      </li>
+
+      <li class="dropdown">
+        <a href="{% url 'logout' %}?next={% url 'website-home' %}">
+          <i class="fa fa-fas fa-sign-out-alt" aria-hidden="true"></i>
+          {% trans 'logout'%}
+        </a>
+      </li>
+
+  </ul>
+
+  <div class="navbar-default sidebar" role="navigation">
+      <div class="sidebar-nav navbar-collapse collapse" style="height: 1px;">
+          <img src="{% static 'theme/images/kashta.jpg' %}" style="display:inline-block; text-align: center; max-width: 200px; left: 50%;">
+          <div class="divider"></div>
+          <ul class="nav in" id="side-menu">
+          </ul>
+      </div>
+  </div>
+
+</nav>

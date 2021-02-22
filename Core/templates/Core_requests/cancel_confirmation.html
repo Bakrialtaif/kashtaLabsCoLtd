@@ -1,0 +1,16 @@
+{% extends "base/header/modal_header.html" %}
+{% load i18n %}
+{% load static %}
+{% block modal-header %}{% trans 'cancel request' %}{% endblock %}
+{% block modal-body %}
+<section class="send">
+    <p>{% trans 'request cancel confirmation message' %}</p>
+    <hr>    
+    <p>
+        <a href="{% url 'Core:request-cancel' wf_request_id=wf_request.pk %}" class="general-link">
+            <i class="fa fa-far fa-trash-alt" aria-hidden="true"></i>&nbsp;{% trans 'cancel confirmation' %}
+        </a>
+    </p>
+</section>
+{% endblock %}
+{% block modal-footer %}{% endblock %}

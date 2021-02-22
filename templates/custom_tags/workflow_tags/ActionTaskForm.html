@@ -1,0 +1,98 @@
+{% load static %}
+{% load i18n %}
+{% load general_tags %}
+
+{% if form and requestObject.action.type != end %}
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#form" data-toggle="tab">{% trans 'form data' %}</a></li>
+        <li><a href="#task" data-toggle="tab">{% trans 'task data' %}</a></li>
+        {% if requestObject.action.type == with_children %}
+        <li><a href="#branching" data-toggle="tab">{% trans 'branching' %}</a></li>
+        {% endif %}
+        {% if requestObject.action.type == without_children %}
+        <li><a href="#success_condition" data-toggle="tab">{% trans 'success condition' %}</a></li>
+        {% endif %}
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane fade  in active" id="form">
+            {% if requestObject.action.category == QUESTIONNAIRE %}
+            <form action="{% url 'Core:request-save-action-form-data' wf_request_id=requestObject.pk action_id=requestObject.action.pk %}" method="POST">
+                {% csrf_token %}
+                <table class="table">
+                    {{ form.as_table}}
+                    <tr>
+                        <td width="20%">&nbsp;</td>
+                        <td width="80%">
+                            <button type="submit" class="btn btn-success">{% trans 'save' %}</button>
+                        </td>
+                    <tr>
+                </table>
+            </form>
+            {% else %}
+
+                {% if requestObject.get_procedure.do_tests.checks_false %}
+                    <table class="table">
+                        <tr>
+                            <th width="5%"></th>
+                            <th width="40%">{% trans 'code' %}</th>
+                            <th width="55 %">{% trans 'error messages' %}</th>
+                        </tr>
+                        {% for check in requestObject.get_procedure.do_tests.checks_false %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ check.code }}</td>
+                                <td><i class="fa fa-far fa-calendar-times text-danger"></i>&nbsp;{{ check.message }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <h3 class="text-success">{% trans 'chart is correct' %}</h3>
+                {% endif %}
+
+                <div class="header-links">
+                    <a href="{{ requestObject.get_procedure.get_path }}">{% trans requestObject.get_procedure.code %}</a>
+                </div>
+
+            {% endif %}
+        </div>
+        <div class="tab-pane fade" id="task">
+            {% BrowseModelData modelObject=requestObject.task %}
+        </div>
+        {% if requestObject.action.type == with_children %}
+            <div class="tab-pane fade" id="branching">
+                <table class="table">
+                    <tr>
+                        <td width="5%">&nbsp;</td>
+                        <td width="25%">{% trans 'choice' %}</td>
+                        <td width="70%">{% trans 'redirect to' %}</td>
+                    </tr>
+                    {% for track in requestObject.action.tracks.all %}
+                        <tr>
+                            <td width="5%">{{ forloop.counter }}</td>
+                            <td width="25%">{% trans track.name %}</td>
+                            <td width="70%">{{ track.redirect_to }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endif %}
+        {% if requestObject.action.type == without_children %}
+            <div class="tab-pane fade" id="success_condition">
+                <table class="table">
+                    <tr>
+                        <td width="5%">&nbsp;</td>
+                        <td width="25%">{% trans 'input' %}</td>
+                        <td width="70%">{% trans 'value' %}</td>
+                    </tr>
+                    <tr>
+                        <td width="5%">&nbsp;</td>
+                        <td width="25%">{{ requestObject.action.success_input }}</td>
+                        <td width="25%">{{ requestObject.action.success_track }}</td>
+                    </tr>
+                </table>
+            </div>
+        {% endif %}
+    </div>
+{% endif %}

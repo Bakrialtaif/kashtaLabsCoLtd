@@ -1,0 +1,10 @@
+[
+{
+    "model": "sessions.session",
+    "pk": "wkaafn90mie199tpgduwxkvr94ri4qke",
+    "fields": {
+        "session_data": "ZGZjNmJiZDcyOGU5YjAxOGFmMjFkYTAzODc3N2Y0YzlhY2NkM2UyNjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI4MjVmMDM5ODgxZmMxMGI5NjRhMDNmZDU2YmE0YTkzZDFkZWNiNTBkIn0=",
+        "expire_date": "2020-10-29T12:28:14.262Z"
+    }
+}
+]

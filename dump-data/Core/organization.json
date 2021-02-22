@@ -1,0 +1,15 @@
+[
+{
+    "model": "Core.organization",
+    "pk": 1,
+    "fields": {
+        "name": "organization name",
+        "code": "5040302010",
+        "phone": null,
+        "email": null,
+        "title": "",
+        "location": "SRID=4326;POINT (0 0)",
+        "geom": null
+    }
+}
+]

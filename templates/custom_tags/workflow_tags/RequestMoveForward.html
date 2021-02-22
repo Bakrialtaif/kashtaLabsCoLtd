@@ -1,0 +1,22 @@
+{% load static %}
+{% load i18n %}
+{% if requestObject.action.category == QUESTIONNAIRE %}
+
+    {% if requestObject.status == under_proccess and requestObject.task.execution_status == done%}
+        <a href="{% url 'Core:request-move' wf_request_id=requestObject.pk type=move_type%}" class="general-link">
+            {% trans 'send forward' %}&nbsp;<i class="fa fa-fas fa-step-backward" aria-hidden="true"></i>
+        </a>
+    {% else %}
+        <span class="hint">{% trans 'send forward' %}</span>
+    {% endif %}
+
+{% else %}
+
+    {% if requestObject.status == under_proccess and requestObject.get_procedure.status%}
+        <a href="{% url 'Core:request-move' wf_request_id=requestObject.pk type=move_type%}" class="general-link">
+            {% trans 'send forward' %}&nbsp;<i class="fa fa-fas fa-step-backward" aria-hidden="true"></i>
+        </a>
+    {% else %}
+        <span class="hint">{% trans 'send forward' %}</span>
+    {% endif %}
+{% endif %}
