@@ -40,7 +40,7 @@ SECRET_KEY = '^jt*8mb=9!h2%6z@r6&x-au=-hr-d2738%$s!ivl@7haw!-+m@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bladalnoor.com', '161.35.133.74']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bladalnoor.com', '142.93.153.198']
 # ALLOWED_HOSTS = []
 
 # Application definition
