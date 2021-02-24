@@ -3304,7 +3304,8 @@ msgid "completion status"
 msgstr "حالة الإكتمال"
 
 #: P001/procedures/permission_request_procedure.py:19
-#, fuzzy, python-format
+#, fuzzy
+#, python-format
 #| msgid "%s_about"
 msgid "%s_about"
 msgstr "تعريف"
