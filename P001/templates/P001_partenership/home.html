@@ -1,0 +1,314 @@
+{% extends "base/header/system_header.html" %}
+{% load i18n %}
+{% load static %}
+{% load general_tags %}
+{% block page_title %}{% trans 'P001' %}{% endblock %}
+{% block content %}
+
+    <div class="divider"></div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#home" data-toggle="tab">{% trans 'current partenership' %}</a></li>
+                <li><a href="#type1" data-toggle="tab">مقترح 1</a></li>
+                <li><a href="#type2" data-toggle="tab">مقترح 2</a></li>
+                <li><a href="#type3" data-toggle="tab">مقترح 3</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+
+                    <h4>الشركاء</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td style="text-align: center; width:5%;">#</td>
+                                <td style="text-align: right; width:25%;">الشريك</td>
+                                <td style="text-align: right; width:50%;">الأصل</td>
+                                <td style="text-align: right; width:20%;">النسبة</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="center">1</td>
+                                <td>أبوبكر البشير</td>
+                                <td>شركة كاشتا ( مؤسسة كاشتا + مؤسسة باتنجان )</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr>
+                                <td align="center">2</td>
+                                <td>أبوبكر الطائف + أحمد الطائف</td>
+                                <td>شركة كاشتا ( مؤسسة كاشتا + مؤسسة باتنجان )</td>
+                                <td>50%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>الإستثمار</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td style="text-align: center; width:5%;">#</td>
+                                <td style="text-align: right; width:45%;">البند</td>
+                                <td style="text-align: right; width:15%;">المبلغ</td>
+                                <td style="text-align: right; width:35%;">تفاصيل</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="center">2</td>
+                                <td>مبلغ الإستثمار</td>
+                                <td>10,000$</td>
+                                <td>المبلغ الإجمالي المطلوب للدخول في الشراكة</td>
+                            </tr>
+                            <tr>
+                                <td align="center">3</td>
+                                <td>القيمة من مبلغ الإستثمار المخصصة لتملك الأسهم</td>
+                                <td style="background-color: #f0f0f0;">5000$</td>
+                                <td>يتم دفعها لصالح ( أبوبكر الطائف + أحمد الطائف )</td>
+                            </tr>
+                            <tr>
+                                <td align="center">4</td>
+                                <td>القيمة من مبلغ الإستثمار المخصصة لإعادة ضخها في الشركة</td>
+                                <td style="background-color: #f0f0f0;">3000$</td>
+                                <td>يتم صرفها لتطوير المؤسسة للعام 2021</td>
+                            </tr>
+                            <tr>
+                                <td align="center">4</td>
+                                <td>القيمة من مبلغ الإستثمار المخصصة للدفع الآجل وفق الإحتياج</td>
+                                <td style="background-color: #f0f0f0;">2000$</td>
+                                <td>يتم الدفع منها وفق الإحتياج في أوقات متفرقه</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>الدفعيات</h4>
+                    <p>يتم دفع المبلغ 8 ألف دولار بالتقسيط على دفعات مريحه خلال العام 2021</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td style="text-align: center; width:5%;">#</td>
+                                <td style="text-align: right; width:30%;">المبلغ</td>
+                                <td style="text-align: right; width:25%;">التاريخ</td>
+                                <td style="text-align: right; width:20%;">شراء أسهم</td>
+                                <td style="text-align: right; width:20%;">تطوير الشركة</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="center">1</td>
+                                <td>3000$</td>
+                                <td>31/1/2021</td>
+                                <td>1000$</td>
+                                <td>2000$</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="type1">
+                    <h4>الشركاء</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td style="text-align: center; width:5%;">#</td>
+                                <td style="text-align: right; width:25%;">الشريك</td>
+                                <td style="text-align: right; width:50%;">الأصل</td>
+                                <td style="text-align: right; width:20%;">النسبة</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>أبوبكر البشير</td>
+                                <td>شركة كاشتا ( مؤسسة كاشتا + مؤسسة بلاد النور + مؤسسة باتنجان )</td>
+                                <td>40%</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>أبوبكر الطائف</td>
+                                <td>شركة كاشتا ( مؤسسة كاشتا + مؤسسة بلاد النور + مؤسسة باتنجان )</td>
+                                <td>30%</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>أحمد الطائف</td>
+                                <td>شركة كاشتا ( مؤسسة كاشتا + مؤسسة بلاد النور + مؤسسة باتنجان )</td>
+                                <td>30%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>الإستثمار</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td style="text-align: center; width:5%;">#</td>
+                                <td style="text-align: right; width:45%;">البند</td>
+                                <td style="text-align: right; width:15%;">المبلغ</td>
+                                <td style="text-align: right; width:35%;">تفاصيل</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="center">1</td>
+                                <td>نسبة الشراكة</td>
+                                <td>50%</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td align="center">2</td>
+                                <td>مبلغ الإستثمار</td>
+                                <td>30,000$</td>
+                                <td>المبلغ الإجمالي المطلوب للدخول في الشراكة</td>
+                            </tr>
+                            <tr>
+                                <td align="center">3</td>
+                                <td>القيمة من مبلغ الإستثمار المخصصة لتملك الأسهم</td>
+                                <td style="background-color: #f0f0f0;">15000$</td>
+                                <td>يتم دفعها لصالح ( أبوبكر الطائف + أحمد الطائف )</td>
+                            </tr>
+                            <tr>
+                                <td align="center">4</td>
+                                <td>القيمة من مبلغ الإستثمار المخصصة لإعادة ضخها في الشركة</td>
+                                <td style="background-color: #f0f0f0;">10000$</td>
+                                <td>يتم صرفها لتطوير المؤسسة للعام 2021</td>
+                            </tr>
+                            <tr>
+                                <td align="center">4</td>
+                                <td>القيمة من مبلغ الإستثمار المخصصة للدفع الآجل وفق الإحتياج</td>
+                                <td style="background-color: #f0f0f0;">5000$</td>
+                                <td>يتم الدفع منها وفق الإحتياج في أوقات متفرقه</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>الدفعيات</h4>
+                    <p>يتم دفع المبلغ 8 ألف دولار بالتقسيط على دفعات مريحه خلال العام 2021</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td style="text-align: center; width:5%;">#</td>
+                                <td style="text-align: right; width:30%;">المبلغ</td>
+                                <td style="text-align: right; width:25%;">التاريخ</td>
+                                <td style="text-align: right; width:20%;">شراء أسهم</td>
+                                <td style="text-align: right; width:20%;">تطوير الشركة</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="center">1</td>
+                                <td>3000$</td>
+                                <td>31/1/2021</td>
+                                <td>1000$</td>
+                                <td>2000$</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="type2">
+                    <h4>الشركاء</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td style="text-align: center; width:5%;">#</td>
+                                <td style="text-align: right; width:25%;">الشريك</td>
+                                <td style="text-align: right; width:50%;">الأصل</td>
+                                <td style="text-align: right; width:20%;">النسبة</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>أبوبكر البشير</td>
+                                <td>شركة كاشتا ( مؤسسة كاشتا + مؤسسة بلاد النور + مؤسسة باتنجان )</td>
+                                <td>35%</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>أبوبكر الطائف</td>
+                                <td>شركة كاشتا ( مؤسسة كاشتا + مؤسسة بلاد النور + مؤسسة باتنجان )</td>
+                                <td>32.5%</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>أحمد الطائف</td>
+                                <td>شركة كاشتا ( مؤسسة كاشتا + مؤسسة بلاد النور + مؤسسة باتنجان )</td>
+                                <td>32.5%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>الإستثمار</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td style="text-align: center; width:5%;">#</td>
+                                <td style="text-align: right; width:45%;">البند</td>
+                                <td style="text-align: right; width:15%;">المبلغ</td>
+                                <td style="text-align: right; width:35%;">تفاصيل</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="center">1</td>
+                                <td>نسبة الشراكة</td>
+                                <td>50%</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td align="center">2</td>
+                                <td>مبلغ الإستثمار</td>
+                                <td>30,000$</td>
+                                <td>المبلغ الإجمالي المطلوب للدخول في الشراكة</td>
+                            </tr>
+                            <tr>
+                                <td align="center">3</td>
+                                <td>القيمة من مبلغ الإستثمار المخصصة لتملك الأسهم</td>
+                                <td style="background-color: #f0f0f0;">15000$</td>
+                                <td>يتم دفعها لصالح ( أبوبكر الطائف + أحمد الطائف )</td>
+                            </tr>
+                            <tr>
+                                <td align="center">4</td>
+                                <td>القيمة من مبلغ الإستثمار المخصصة لإعادة ضخها في الشركة</td>
+                                <td style="background-color: #f0f0f0;">10000$</td>
+                                <td>يتم صرفها لتطوير المؤسسة للعام 2021</td>
+                            </tr>
+                            <tr>
+                                <td align="center">4</td>
+                                <td>القيمة من مبلغ الإستثمار المخصصة للدفع الآجل وفق الإحتياج</td>
+                                <td style="background-color: #f0f0f0;">5000$</td>
+                                <td>يتم الدفع منها وفق الإحتياج في أوقات متفرقه</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>الدفعيات</h4>
+                    <p>يتم دفع المبلغ 8 ألف دولار بالتقسيط على دفعات مريحه خلال العام 2021</p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td style="text-align: center; width:5%;">#</td>
+                                <td style="text-align: right; width:30%;">المبلغ</td>
+                                <td style="text-align: right; width:25%;">التاريخ</td>
+                                <td style="text-align: right; width:20%;">شراء أسهم</td>
+                                <td style="text-align: right; width:20%;">تطوير الشركة</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="center">1</td>
+                                <td>3000$</td>
+                                <td>31/1/2021</td>
+                                <td>1000$</td>
+                                <td>2000$</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="type3"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

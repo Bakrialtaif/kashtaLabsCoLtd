@@ -1,5 +1,5 @@
 from django.urls import path
-from P001.views import home, kashta, bladalnoor, batinjan
+from P001.views import home, kashta, bladalnoor, batinjan, partenership
 
 app_name = 'P001'
 
@@ -8,4 +8,5 @@ urlpatterns = [
     path('kashta/home', kashta.home, name='kashta-home'),
     path('bladalnoor/home', bladalnoor.home, name='bladalnoor-home'),
     path('batinjan/home', batinjan.home, name='batinjan-home'),
+    path('partenership/home', partenership.home, name='partenership-home'),
 ]

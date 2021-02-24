@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-22 19:11+0000\n"
+"POT-Creation-Date: 2021-02-24 06:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -298,12 +298,10 @@ msgstr "الموقع الخارجي"
 
 #: Core/cons/GENERAL.py:40 Core/templates/Core_tasks/show.html:8
 #: P001/templates/P001_batinjan/home.html:5
-#: P001/templates/P001_batinjan/home.html:7
 #: P001/templates/P001_bladalnoor/home.html:5
-#: P001/templates/P001_bladalnoor/home.html:7
 #: P001/templates/P001_home/show.html:5 P001/templates/P001_home/show.html:7
 #: P001/templates/P001_kashta/home.html:5
-#: P001/templates/P001_kashta/home.html:7
+#: P001/templates/P001_partenership/home.html:5
 #: templates/custom_tags/general_tags/apps_menu.html:15
 #: trans/Component/name.py:4
 msgid "P001"
@@ -3422,6 +3420,10 @@ msgstr ""
 #: P001/procedures/permission_request_procedure.py:19
 #, python-format
 msgid "%s_about"
+msgstr ""
+
+#: P001/templates/P001_partenership/home.html:14
+msgid "current partenership"
 msgstr ""
 
 #: system/settings.py:199
