@@ -465,7 +465,3 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
-
-CRONJOBS = [
-    ('* * * * *', 'cron.my_cron_job')
-]
